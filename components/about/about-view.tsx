@@ -16,6 +16,7 @@ import {
   aboutVision,
 } from "@/lib/about";
 import { boardNote, leadershipTeam } from "@/lib/leadership";
+import { siteImages } from "@/lib/media";
 import { site } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
@@ -23,11 +24,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function AboutPhoto({
   className,
-  position,
+  src,
+  position = "object-center",
   priority = false,
 }: {
   className?: string;
-  position: string;
+  src: string;
+  position?: string;
   priority?: boolean;
 }) {
   return (
@@ -38,7 +41,7 @@ function AboutPhoto({
       )}
     >
       <Image
-        src="/hero.jpg"
+        src={src}
         alt=""
         fill
         unoptimized
@@ -90,7 +93,7 @@ export function AboutView() {
               </h1>
               <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
                 A youth-led nonprofit creating safe spaces for honest
-                conversation — mental health, leadership, and civic
+                conversation, mental health, leadership, and civic
                 responsibility across Zambia.
               </p>
               <p className="mt-5 text-[15px] font-semibold tracking-[-0.015em] text-[#1F2937]">
@@ -100,8 +103,8 @@ export function AboutView() {
 
             <div data-reveal>
               <AboutPhoto
+                src={siteImages.about[0]}
                 className="aspect-[5/4] w-full lg:aspect-[4/3]"
-                position="object-[42%_35%]"
                 priority
               />
             </div>
@@ -154,11 +157,11 @@ export function AboutView() {
               <p>
                 Talk It Initiative started in 2024 with a clear belief: when
                 young people are given a careful room to speak, they do not only
-                feel lighter — they learn how to lead.
+                feel lighter, they learn how to lead.
               </p>
               <p>
                 Too often, stress, stigma, and silence keep youth carrying what
-                should be shared. We answered with structured conversation —
+                should be shared. We answered with structured conversation,
                 peer dialogue, facilitation, and programmes that turn honesty
                 into agency.
               </p>
@@ -245,7 +248,7 @@ export function AboutView() {
               </h2>
             </div>
             <p className="max-w-sm text-[14px] leading-relaxed text-[#6B7280]">
-              From first conversations to growing programmes — still learning,
+              From first conversations to growing programmes, still learning,
               still opening rooms.
             </p>
           </div>
@@ -293,28 +296,46 @@ export function AboutView() {
               </h2>
             </div>
             <p className="max-w-md text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
-              Roles that steward the Initiative today. Named photos and bios
-              will be published as each leader confirms a public profile.
+              Meet the people stewarding Talk It Initiative, direction,
+              programmes, finance, technology, and provincial reach.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <div className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {leadershipTeam.map((person, index) => (
-              <div key={person.role} data-reveal>
-                <p className="font-mono text-[12px] tracking-[0.08em] text-brand/70">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-3 text-[17px] font-semibold tracking-[-0.02em] text-[#1F2937]">
-                  {person.role}
-                </h3>
-                <p className="mt-1 text-[13px] font-medium text-brand">
-                  {person.focus}
-                </p>
-                <p className="mt-3 text-[14px] leading-relaxed text-[#6B7280]">
-                  {person.bio}
-                </p>
+              <div key={person.name} data-reveal className="flex gap-4">
+                <div className="relative size-14 shrink-0 overflow-hidden rounded-full bg-[#f3f3f3] ring-2 ring-brand/10">
+                  <Image
+                    src={person.image}
+                    alt=""
+                    fill
+                    unoptimized
+                    className="object-cover object-top"
+                    sizes="56px"
+                  />
+                </div>
+                <div className="min-w-0">
+                  <p className="font-mono text-[11px] tracking-[0.08em] text-brand/70">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-1 text-[16px] font-semibold tracking-[-0.02em] text-[#1F2937]">
+                    {person.name}
+                  </h3>
+                  <p className="mt-0.5 text-[13px] font-medium text-brand">
+                    {person.role}
+                  </p>
+                </div>
               </div>
             ))}
+          </div>
+
+          <div data-reveal className="mt-10">
+            <Link
+              href="/team"
+              className="inline-flex text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
+            >
+              View organisational chart & full profiles →
+            </Link>
           </div>
 
           <div
@@ -345,8 +366,8 @@ export function AboutView() {
               </Link>
             </div>
             <AboutPhoto
+              src={siteImages.about[1]}
               className="aspect-[5/4] w-full"
-              position="object-[58%_42%]"
             />
           </div>
         </div>
@@ -411,7 +432,7 @@ export function AboutView() {
             Be part of the story
           </h2>
           <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
-            Volunteer, partner, or support the work — every new voice makes the
+            Volunteer, partner, or support the work, every new voice makes the
             room stronger.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

@@ -96,7 +96,7 @@ export async function POST(request: Request) {
 
   const data = parsed.data;
 
-  // Bot honeypot — pretends success
+  // Bot honeypot, pretends success
   if (data.honeypot) {
     return NextResponse.json({ ok: true });
   }

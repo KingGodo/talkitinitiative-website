@@ -7,14 +7,14 @@ import { site } from "@/lib/navigation";
 type SiteLogoProps = {
   className?: string;
   priority?: boolean;
-  /** Visual scale — footer uses a larger mark */
+  /** Visual scale, footer uses a larger mark */
   size?: "default" | "lg" | "xl";
 };
 
 const sizeClass = {
-  default: "h-14 w-auto sm:h-16 md:h-[4.5rem]",
-  lg: "h-[4.75rem] w-auto sm:h-[5.5rem]",
-  xl: "h-[5.5rem] w-auto sm:h-28 md:h-[7.25rem]",
+  default: "h-9 w-auto sm:h-10",
+  lg: "h-11 w-auto sm:h-12",
+  xl: "h-12 w-auto sm:h-14",
 } as const;
 
 export function SiteLogo({

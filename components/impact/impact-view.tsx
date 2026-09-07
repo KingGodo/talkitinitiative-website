@@ -15,17 +15,20 @@ import {
   impactQuotes,
   impactStories,
 } from "@/lib/impact";
+import { siteImages } from "@/lib/media";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function ImpactPhoto({
   className,
-  position,
+  src,
+  position = "object-center",
   priority = false,
 }: {
   className?: string;
-  position: string;
+  src: string;
+  position?: string;
   priority?: boolean;
 }) {
   return (
@@ -36,7 +39,7 @@ function ImpactPhoto({
       )}
     >
       <Image
-        src="/hero.jpg"
+        src={src}
         alt=""
         fill
         unoptimized
@@ -87,7 +90,7 @@ export function ImpactView() {
                 Impact
               </h1>
               <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-                Progress here is measured in courage spoken aloud — every
+                Progress here is measured in courage spoken aloud, every
                 dialogue session, panel, and gathering is another young person
                 heard across Zambia.
               </p>
@@ -95,8 +98,8 @@ export function ImpactView() {
 
             <div data-reveal>
               <ImpactPhoto
+                src={siteImages.impact}
                 className="aspect-[5/4] w-full lg:aspect-[4/3]"
-                position="object-[62%_42%]"
                 priority
               />
             </div>
@@ -115,7 +118,7 @@ export function ImpactView() {
               What we track
             </h2>
             <p className="max-w-md text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
-              Numbers matter — and so does the kind of change that does not fit
+              Numbers matter, and so does the kind of change that does not fit
               on a chart: a quieter room, a braver sentence, a peer who stays.
             </p>
           </div>
@@ -198,7 +201,7 @@ export function ImpactView() {
               </h2>
             </div>
             <p className="max-w-sm text-[14px] leading-relaxed text-[#6B7280] sm:text-[15px]">
-              Case notes from circles, volunteers, and partners — the work
+              Case notes from circles, volunteers, and partners, the work
               behind the metrics.
             </p>
           </div>
@@ -297,7 +300,7 @@ export function ImpactView() {
             Help grow this impact
           </h2>
           <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
-            Volunteer, partner, or give — every contribution creates another
+            Volunteer, partner, or give, every contribution creates another
             safer room for young people in Zambia.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

@@ -1,6 +1,7 @@
 export const mainNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/team", label: "Team" },
   { href: "/programs", label: "Programs" },
   { href: "/impact", label: "Impact" },
   { href: "/events", label: "Events" },
@@ -11,6 +12,7 @@ export const mainNav = [
 export const footerNav = {
   explore: [
     { href: "/about", label: "About" },
+    { href: "/team", label: "Our Team" },
     { href: "/programs", label: "Programs" },
     { href: "/projects", label: "Projects" },
     { href: "/impact", label: "Impact" },
@@ -39,7 +41,7 @@ export const site = {
   location: "Zambia",
   founded: "2024",
   description:
-    "A youth-led nonprofit creating safe spaces for honest conversation — mental health, leadership, and civic responsibility across Zambia.",
+    "A youth-led nonprofit creating safe spaces for honest conversation, mental health, leadership, and civic responsibility across Zambia.",
 } as const;
 
 /** Update these with verified payment details when ready for public receipt. */
@@ -57,7 +59,7 @@ export const donateChannels = [
   {
     title: "In-kind support",
     detail:
-      "Venue space, materials, catering, and transport for circles make a direct difference — tell us what you can offer.",
+      "Venue space, materials, catering, and transport for circles make a direct difference, tell us what you can offer.",
   },
 ] as const;
 

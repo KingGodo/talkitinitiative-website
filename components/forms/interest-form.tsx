@@ -209,7 +209,7 @@ export function InterestForm({
 
       {status === "success" ? (
         <p className="text-[13px] leading-relaxed text-[#065782]">
-          Thank you — your message was sent. We’ll reply to your email soon.
+          Thank you, your message was sent. We’ll reply to your email soon.
         </p>
       ) : null}
 

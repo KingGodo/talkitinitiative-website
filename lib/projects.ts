@@ -16,13 +16,13 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "campus-circle-lusaka",
-    title: "Campus Circles — Lusaka",
+    title: "Campus Circles, Lusaka",
     status: "active",
     place: "Lusaka",
     program: "Mental Health Advocacy",
-    period: "2025 — ongoing",
+    period: "2025, ongoing",
     summary:
-      "Recurring peer-led dialogue on campus so students can name stress, stigma, and hope — then invite others in.",
+      "Recurring peer-led dialogue on campus so students can name stress, stigma, and hope, then invite others in.",
     objectives: [
       "Hold regular judgment-free circles for students",
       "Train peer facilitators to open new rooms each term",
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     status: "active",
     place: "Central Province & online",
     program: "Leadership Development",
-    period: "2025 — ongoing",
+    period: "2025, ongoing",
     summary:
       "A pathway that turns first-time volunteers into stewards who can guide dialogue with care and structure.",
     objectives: [
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     ],
     partners: "Talk It Initiative facilitators and community hosts",
     outcomes:
-      "Participants move from helping set up the room to guiding dialogue — multiplying impact with quality intact.",
+      "Participants move from helping set up the room to guiding dialogue, multiplying impact with quality intact.",
   },
   {
     slug: "neighbourhood-listening",
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     status: "completed",
     place: "Community hubs across Zambia",
     program: "Community Engagement",
-    period: "2025 — 2026",
+    period: "2025, 2026",
     summary:
       "Brought structured youth dialogue into neighbourhoods that had never hosted a Talk It Initiative circle.",
     objectives: [
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     ],
     partners: "Local community organisations and hubs",
     outcomes:
-      "Parents and youth ask for the next session — trust built one careful conversation at a time.",
+      "Parents and youth ask for the next session, trust built one careful conversation at a time.",
   },
   {
     slug: "provincial-expansion",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     status: "upcoming",
     place: "Provinces across Zambia",
     program: "Youth Empowerment",
-    period: "2026 — planning",
+    period: "2026, planning",
     summary:
       "Grow Talk It Tuesday and community circles beyond early hubs so more young people have a room nearby.",
     objectives: [

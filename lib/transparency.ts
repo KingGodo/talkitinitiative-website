@@ -32,7 +32,7 @@ export const reportPlaceholders = [
   {
     title: "Financial overview",
     status: "Coming soon",
-    body: "How gifts and in-kind support were used — published when accounts are confirmed.",
+    body: "How gifts and in-kind support were used, published when accounts are confirmed.",
   },
   {
     title: "Safeguarding review",

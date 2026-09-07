@@ -16,10 +16,18 @@ const instrument = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name}, ${site.tagline}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/logo.png",
+    shortcut: "/logo.png",
+  },
   applicationName: site.name,
   keywords: [
     "Talk It Initiative",
@@ -37,7 +45,7 @@ export const metadata: Metadata = {
     locale: "en_ZM",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}, ${site.tagline}`,
     description: site.description,
     images: [
       {
@@ -50,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name}, ${site.tagline}`,
     description: site.description,
     images: ["/logo.png"],
   },

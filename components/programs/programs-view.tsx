@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRef } from "react";
 
 import { Button } from "@/components/ui/button";
+import { siteImages } from "@/lib/media";
 import { programs } from "@/lib/programs";
 import { cn } from "@/lib/utils";
 
@@ -15,11 +16,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function ProgramPhoto({
   className,
-  position,
+  src,
+  position = "object-center",
   priority = false,
 }: {
   className?: string;
-  position: string;
+  src: string;
+  position?: string;
   priority?: boolean;
 }) {
   return (
@@ -30,7 +33,7 @@ function ProgramPhoto({
       )}
     >
       <Image
-        src="/hero.jpg"
+        src={src}
         alt=""
         fill
         unoptimized
@@ -69,7 +72,7 @@ export function ProgramsView() {
 
   return (
     <div ref={root}>
-      {/* Hero — one composition */}
+      {/* Hero, one composition */}
       <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-[1120px] px-5 pt-14 pb-16 sm:px-8 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-28">
           <div className="grid items-end gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
@@ -81,15 +84,15 @@ export function ProgramsView() {
                 Programs
               </h1>
               <p className="mt-6 max-w-[30rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-                Structured spaces where young people speak with honesty — then
+                Structured spaces where young people speak with honesty, then
                 leave with clarity, confidence, and a path to lead.
               </p>
             </div>
 
             <div data-reveal className="relative">
               <ProgramPhoto
+                src={siteImages.programs[0]}
                 className="aspect-[5/4] w-full lg:aspect-[4/3]"
-                position="object-[48%_38%]"
                 priority
               />
             </div>
@@ -134,7 +137,7 @@ export function ProgramsView() {
                 },
                 {
                   title: "Guided carefully",
-                  body: "Facilitators hold space with structure — honesty invited, judgment left outside.",
+                  body: "Facilitators hold space with structure, honesty invited, judgment left outside.",
                 },
                 {
                   title: "Action next",
@@ -190,6 +193,7 @@ export function ProgramsView() {
                   </div>
 
                   <ProgramPhoto
+                    src={program.image}
                     className="aspect-[5/4] w-full"
                     position={program.position}
                   />
@@ -240,7 +244,7 @@ export function ProgramsView() {
             Ready to step into a program?
           </h2>
           <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
-            Volunteer, join a circle, or partner with Talk It Initiative — every
+            Volunteer, join a circle, or partner with Talk It Initiative, every
             new voice strengthens the work.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

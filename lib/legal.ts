@@ -31,7 +31,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "How we use information",
         body: [
-          "To respond to enquiries, coordinate volunteering and events, process donation interest, improve our programmes, and — only if you opt in — send occasional updates about Talk It Initiative.",
+          "To respond to enquiries, coordinate volunteering and events, process donation interest, improve our programmes, and, only if you opt in, send occasional updates about Talk It Initiative.",
           "We may anonymise or aggregate information for reporting impact to partners and funders.",
         ],
       },
@@ -74,13 +74,13 @@ export const legalDocs: LegalDoc[] = [
         heading: "Our commitment",
         body: [
           "Every young person who joins a Talk It Initiative space deserves dignity, respect, and protection from harm. Safeguarding comes before programme goals, attendance numbers, or convenience.",
-          "We work primarily with youth and young adults. Facilitators are expected to model care, boundaries, and confidentiality appropriate to group dialogue — never pressure, exploitation, or secrecy that isolates a participant.",
+          "We work primarily with youth and young adults. Facilitators are expected to model care, boundaries, and confidentiality appropriate to group dialogue, never pressure, exploitation, or secrecy that isolates a participant.",
         ],
       },
       {
         heading: "What we mean by harm",
         body: [
-          "Harm includes physical, emotional, sexual, or financial abuse; neglect; bullying; online grooming; and misuse of power by anyone connected to our work — staff, volunteers, partners, or peers.",
+          "Harm includes physical, emotional, sexual, or financial abuse; neglect; bullying; online grooming; and misuse of power by anyone connected to our work, staff, volunteers, partners, or peers.",
         ],
       },
       {

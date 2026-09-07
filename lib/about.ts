@@ -1,8 +1,8 @@
 export const aboutMission =
-  "To create safe spaces where young people in Zambia can speak with honesty, grow in confidence, and lead with care — through dialogue that strengthens mental health, leadership, and civic responsibility.";
+  "To create safe spaces where young people in Zambia can speak with honesty, grow in confidence, and lead with care, through dialogue that strengthens mental health, leadership, and civic responsibility.";
 
 export const aboutVision =
-  "A Zambia where every young person has a room to be heard — and the courage to shape what comes next.";
+  "A Zambia where every young person has a room to be heard, and the courage to shape what comes next.";
 
 export const aboutValues = [
   {
@@ -42,7 +42,7 @@ export const aboutTimeline = [
   {
     year: "Today",
     title: "Still building rooms",
-    body: "Provincial reach is expanding. Partners, volunteers, and young people keep the method moving — one careful conversation at a time.",
+    body: "Provincial reach is expanding. Partners, volunteers, and young people keep the method moving, one careful conversation at a time.",
   },
 ] as const;
 

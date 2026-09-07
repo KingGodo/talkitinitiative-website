@@ -80,7 +80,7 @@ export function ContactView() {
                 Based in
               </p>
               <p className="mt-2 text-[15px] leading-relaxed text-[#6B7280]">
-                Zambia — with online gatherings and community sessions across
+                Zambia, with online gatherings and community sessions across
                 provinces as the work grows.
               </p>
             </div>
@@ -134,7 +134,7 @@ export function ContactView() {
               Send a message
             </h2>
             <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280]">
-              Submit here and we’ll receive your message directly — no email app
+              Submit here and we’ll receive your message directly, no email app
               required.
             </p>
 
@@ -168,7 +168,7 @@ export function ContactView() {
               </h2>
             </div>
             <p className="max-w-md text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
-              Quick answers before you write — still stuck? Email us and we’ll
+              Quick answers before you write, still stuck? Email us and we’ll
               help you find the right next step.
             </p>
           </div>

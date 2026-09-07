@@ -4,7 +4,7 @@ export const involvementPaths = [
     title: "Volunteer",
     eyebrow: "Show up in the room",
     summary:
-      "Facilitate circles, support events, and help young people feel heard — with training and care around you.",
+      "Facilitate circles, support events, and help young people feel heard, with training and care around you.",
     commit: "Flexible hours · Facilitator training provided",
     actions: [
       "Hold space in dialogue circles and Talk It Tuesdays",
@@ -12,7 +12,7 @@ export const involvementPaths = [
       "Grow into peer facilitation with mentorship",
     ],
     cta: "Volunteer with us",
-    mailSubject: "Volunteer interest — Talk It Initiative",
+    mailSubject: "Volunteer interest, Talk It Initiative",
   },
   {
     id: "partner",
@@ -27,14 +27,14 @@ export const involvementPaths = [
       "Strengthen youth mental health and leadership together",
     ],
     cta: "Explore partnership",
-    mailSubject: "Partnership inquiry — Talk It Initiative",
+    mailSubject: "Partnership inquiry, Talk It Initiative",
   },
   {
     id: "donate",
     title: "Donate",
     eyebrow: "Fuel safer spaces",
     summary:
-      "Your gift keeps rooms open — facilitation, materials, and reach for young people across Zambia.",
+      "Your gift keeps rooms open, facilitation, materials, and reach for young people across Zambia.",
     commit: "One-time or ongoing support",
     actions: [
       "Underwrite dialogue sessions and peer training",
@@ -42,7 +42,7 @@ export const involvementPaths = [
       "Support safeguarding and facilitator care",
     ],
     cta: "Start a gift enquiry",
-    mailSubject: "Donation interest — Talk It Initiative",
+    mailSubject: "Donation interest, Talk It Initiative",
   },
 ] as const;
 
@@ -50,7 +50,7 @@ export const involvementExtras = [
   {
     id: "campaign",
     title: "Join a campaign",
-    body: "Amplify awareness moments — stigma out, dialogue in — across campuses and communities.",
+    body: "Amplify awareness moments, stigma out, dialogue in, across campuses and communities.",
   },
   {
     id: "internship",

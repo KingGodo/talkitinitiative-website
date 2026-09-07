@@ -14,6 +14,7 @@ import {
   involvementPaths,
 } from "@/lib/get-involved";
 import type { InterestType } from "@/lib/interest";
+import { siteImages } from "@/lib/media";
 import { donateChannels, donateUses, site } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
@@ -21,11 +22,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PagePhoto({
   className,
-  position,
+  src,
+  position = "object-center",
   priority = false,
 }: {
   className?: string;
-  position: string;
+  src: string;
+  position?: string;
   priority?: boolean;
 }) {
   return (
@@ -36,7 +39,7 @@ function PagePhoto({
       )}
     >
       <Image
-        src="/hero.jpg"
+        src={src}
         alt="Young people gathered in conversation with Talk It Initiative"
         fill
         unoptimized
@@ -92,7 +95,7 @@ export function GetInvolvedView() {
                 Get Involved
               </h1>
               <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-                Your voice belongs in this work. Volunteer, partner, or give —
+                Your voice belongs in this work. Volunteer, partner, or give,
                 and help create safer spaces where young people in Zambia can
                 speak and lead.
               </p>
@@ -100,8 +103,8 @@ export function GetInvolvedView() {
 
             <div data-reveal>
               <PagePhoto
+                src={siteImages.getInvolved[0]}
                 className="aspect-[5/4] w-full lg:aspect-[4/3]"
-                position="object-[35%_40%]"
                 priority
               />
             </div>
@@ -230,21 +233,15 @@ export function GetInvolvedView() {
 
                   <div className="space-y-6">
                     <PagePhoto
+                      src={siteImages.getInvolved[index] ?? siteImages.getInvolved[0]}
                       className="aspect-[5/4] w-full"
-                      position={
-                        index === 0
-                          ? "object-[22%_30%]"
-                          : index === 1
-                            ? "object-[70%_40%]"
-                            : "object-[48%_55%]"
-                      }
                     />
                     <div className="rounded-[24px] border border-black/[0.08] bg-[#FAFAFA] p-6 sm:p-7">
                       <h3 className="text-[17px] font-semibold text-[#1F2937]">
                         {path.cta}
                       </h3>
                       <p className="mt-1 text-[13px] text-[#6B7280]">
-                        Submit interest — we’ll reply with next steps
+                        Submit interest, we’ll reply with next steps
                         {path.id === "donate"
                           ? " and verified payment details"
                           : ""}
@@ -325,7 +322,7 @@ export function GetInvolvedView() {
             Not sure where to start?
           </h2>
           <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
-            Write to us — tell us who you are and how you’d like to help. We’ll
+            Write to us, tell us who you are and how you’d like to help. We’ll
             point you to the right next step.
           </p>
           <p className="mt-6 text-[15px] font-semibold text-[#1F2937]">

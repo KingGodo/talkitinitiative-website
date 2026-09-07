@@ -16,11 +16,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function EventPhoto({
   className,
-  position,
+  src,
+  position = "object-center",
   priority = false,
 }: {
   className?: string;
-  position: string;
+  src: string;
+  position?: string;
   priority?: boolean;
 }) {
   return (
@@ -31,7 +33,7 @@ function EventPhoto({
       )}
     >
       <Image
-        src="/hero.jpg"
+        src={src}
         alt="Talk It Initiative dialogue gathering"
         fill
         unoptimized
@@ -105,6 +107,7 @@ function EventRow({
             </div>
           </div>
           <EventPhoto
+            src={event.image}
             className="aspect-[5/4] w-full"
             position={event.position}
             priority
@@ -114,6 +117,7 @@ function EventRow({
         <div className="space-y-5">
           <div className="grid items-start gap-4 sm:grid-cols-[7.5rem_1fr_auto] sm:items-center sm:gap-8">
             <EventPhoto
+              src={event.image}
               className="aspect-[5/4] w-full sm:aspect-square sm:h-[5.5rem] sm:w-[5.5rem]"
               position={event.position}
             />
@@ -209,7 +213,7 @@ export function EventsView() {
             </h1>
             <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
               Circles, panels, and gatherings where young people practise honest
-              conversation — online and across communities in Zambia.
+              conversation, online and across communities in Zambia.
             </p>
           </div>
 
@@ -250,7 +254,7 @@ export function EventsView() {
               </h2>
             </div>
             <p className="hidden max-w-[16rem] text-right text-[13px] leading-relaxed text-[#6B7280] sm:block">
-              Register interest below — we’ll share joining details by email.
+              Register interest below, we’ll share joining details by email.
             </p>
           </div>
 

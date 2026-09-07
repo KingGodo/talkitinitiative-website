@@ -1,3 +1,5 @@
+import { galleryPhotos } from "@/lib/media";
+
 export type SiteEvent = {
   slug: string;
   title: string;
@@ -8,6 +10,7 @@ export type SiteEvent = {
   program: string;
   summary: string;
   position: string;
+  image: string;
   status: "upcoming" | "past";
 };
 
@@ -21,8 +24,9 @@ export const events: SiteEvent[] = [
     format: "Online",
     program: "Mental Health Advocacy",
     summary:
-      "A recurring dialogue circle for young people to speak honestly about what they are carrying — peer-led, judgment-free, and practical.",
-    position: "object-[30%_35%]",
+      "A recurring dialogue circle for young people to speak honestly about what they are carrying, peer-led, judgment-free, and practical.",
+    position: "object-center",
+    image: galleryPhotos[0],
     status: "upcoming",
   },
   {
@@ -35,7 +39,8 @@ export const events: SiteEvent[] = [
     program: "Youth Empowerment",
     summary:
       "An on-campus gathering where students practise open conversation, listen well, and leave with clearer next steps.",
-    position: "object-[60%_42%]",
+    position: "object-center",
+    image: galleryPhotos[1],
     status: "upcoming",
   },
   {
@@ -48,7 +53,8 @@ export const events: SiteEvent[] = [
     program: "Leadership Development",
     summary:
       "Young leaders and facilitators share what it takes to hold space, build confidence, and serve peers with care.",
-    position: "object-[45%_55%]",
+    position: "object-center",
+    image: galleryPhotos[2],
     status: "upcoming",
   },
   {
@@ -61,7 +67,8 @@ export const events: SiteEvent[] = [
     program: "Community Engagement",
     summary:
       "A neighbourhood dialogue that brought youth, parents, and local partners into one honest conversation about care and leadership.",
-    position: "object-[40%_50%]",
+    position: "object-center",
+    image: galleryPhotos[3],
     status: "past",
   },
   {
@@ -73,8 +80,9 @@ export const events: SiteEvent[] = [
     format: "Online",
     program: "Mental Health Advocacy",
     summary:
-      "An evening online circle focused on stigma, support, and speaking early — facilitators guided a careful, respectful room.",
-    position: "object-[52%_38%]",
+      "An evening online circle focused on stigma, support, and speaking early, facilitators guided a careful, respectful room.",
+    position: "object-center",
+    image: galleryPhotos[4],
     status: "past",
   },
   {
@@ -87,7 +95,8 @@ export const events: SiteEvent[] = [
     program: "Leadership Development",
     summary:
       "Volunteers practised holding dialogue with structure: opening, listening cues, and closing a circle well.",
-    position: "object-[25%_45%]",
+    position: "object-center",
+    image: galleryPhotos[5],
     status: "past",
   },
 ];

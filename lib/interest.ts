@@ -31,22 +31,22 @@ export type InterestPayload = z.infer<typeof interestSchema>;
 export function interestSubject(data: InterestPayload) {
   switch (data.type) {
     case "volunteer":
-      return `Volunteer interest — ${data.name}`;
+      return `Volunteer interest, ${data.name}`;
     case "partner":
-      return `Partnership enquiry — ${data.name}`;
+      return `Partnership enquiry, ${data.name}`;
     case "donate":
-      return `Donation interest — ${data.name}`;
+      return `Donation interest, ${data.name}`;
     case "rsvp":
-      return `RSVP: ${data.eventSlug || "Event"} — ${data.name}`;
+      return `RSVP: ${data.eventSlug || "Event"}, ${data.name}`;
     case "newsletter":
-      return `Newsletter signup — ${data.name}`;
+      return `Newsletter signup, ${data.name}`;
     case "campaign":
-      return `Campaign interest — ${data.name}`;
+      return `Campaign interest, ${data.name}`;
     case "internship":
-      return `Internship enquiry — ${data.name}`;
+      return `Internship enquiry, ${data.name}`;
     case "media":
-      return `Media enquiry — ${data.name}`;
+      return `Media enquiry, ${data.name}`;
     default:
-      return `Contact: ${data.topic || "General enquiry"} — ${data.name}`;
+      return `Contact: ${data.topic || "General enquiry"}, ${data.name}`;
   }
 }

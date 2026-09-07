@@ -8,20 +8,23 @@ import Link from "next/link";
 import { useRef, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
+import { siteImages } from "@/lib/media";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP);
 
 type PhotoCardProps = {
   className?: string;
-  position: string;
+  src: string;
+  position?: string;
   overlay?: string;
   priority?: boolean;
 };
 
 function PhotoCard({
   className,
-  position,
+  src,
+  position = "object-center",
   overlay,
   priority = false,
 }: PhotoCardProps) {
@@ -33,7 +36,7 @@ function PhotoCard({
       )}
     >
       <Image
-        src="/hero.jpg"
+        src={src}
         alt=""
         fill
         unoptimized
@@ -73,6 +76,9 @@ function CaptionCard({
   );
 }
 
+const [heroLeft, heroMidLeft, heroCenter, heroMidRight, heroRight] =
+  siteImages.homeHero;
+
 export function HomeHero() {
   const root = useRef<HTMLElement>(null);
 
@@ -96,16 +102,14 @@ export function HomeHero() {
   return (
     <section ref={root} className="overflow-hidden bg-white">
       <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:min-h-[calc(100svh-5rem)]">
-        {/* ——— Desktop collage (exact reference structure) ——— */}
         <div className="pointer-events-none absolute inset-0 hidden lg:block">
-          {/* LEFT & RIGHT outer stacks + center square share one baseline */}
           <div
             data-hero-card
             className="absolute bottom-[8%] left-[2%] flex w-[190px] flex-col gap-3 xl:left-[3%] xl:w-[210px]"
           >
             <PhotoCard
+              src={heroLeft}
               className="aspect-[3/4] w-full"
-              position="object-[18%_20%]"
               priority
             />
             <CaptionCard>
@@ -119,8 +123,8 @@ export function HomeHero() {
             className="absolute bottom-[8%] right-[2%] flex w-[190px] flex-col gap-3 xl:right-[3%] xl:w-[210px]"
           >
             <PhotoCard
+              src={heroRight}
               className="aspect-[3/4] w-full"
-              position="object-[82%_40%]"
               priority
             />
             <CaptionCard>
@@ -132,20 +136,16 @@ export function HomeHero() {
             data-hero-card
             className="absolute bottom-[8%] left-1/2 w-[190px] -translate-x-1/2 xl:w-[210px]"
           >
-            <PhotoCard
-              className="aspect-square w-full"
-              position="object-[50%_45%]"
-            />
+            <PhotoCard src={heroCenter} className="aspect-square w-full" />
           </div>
 
-          {/* Middle insets — taller height only, same width & bottom line */}
           <div
             data-hero-card
             className="absolute bottom-[8%] left-[22%] w-[175px] xl:left-[23%] xl:w-[190px]"
           >
             <PhotoCard
+              src={heroMidLeft}
               className="h-[260px] w-full xl:h-[280px]"
-              position="object-[42%_48%]"
             />
           </div>
 
@@ -154,14 +154,13 @@ export function HomeHero() {
             className="absolute bottom-[8%] right-[22%] w-[175px] xl:right-[23%] xl:w-[190px]"
           >
             <PhotoCard
+              src={heroMidRight}
               className="h-[260px] w-full xl:h-[280px]"
-              position="object-[68%_32%]"
               overlay="Together, we turn honest conversation into lasting change."
             />
           </div>
         </div>
 
-        {/* ——— Centered hero copy ——— */}
         <div className="relative z-10 flex flex-col items-center justify-start pt-8 pb-6 sm:pt-12 lg:min-h-[calc(100svh-5rem)] lg:pt-14 lg:pb-24">
           <div
             data-hero-copy
@@ -169,21 +168,17 @@ export function HomeHero() {
           >
             <div className="flex max-w-md items-center gap-2.5 rounded-full border border-black/[0.06] bg-white px-2.5 py-1.5 sm:gap-3 sm:px-3">
               <div className="flex shrink-0 -space-x-2">
-                {[
-                  "object-[25%_30%]",
-                  "object-[50%_40%]",
-                  "object-[72%_45%]",
-                ].map((pos) => (
+                {siteImages.homeAvatars.map((src) => (
                   <div
-                    key={pos}
+                    key={src}
                     className="relative size-6 overflow-hidden rounded-full border-2 border-white sm:size-8"
                   >
                     <Image
-                      src="/hero.jpg"
+                      src={src}
                       alt=""
                       fill
                       unoptimized
-                      className={cn("object-cover", pos)}
+                      className="object-cover object-center"
                       sizes="32px"
                     />
                   </div>
@@ -205,8 +200,8 @@ export function HomeHero() {
             </h1>
 
             <p className="mt-4 max-w-[30rem] text-[14px] leading-relaxed text-[#6B7280] sm:mt-6 sm:text-[17px]">
-              We create safe spaces for young people in Zambia to speak honestly
-              — about mental health, leadership, and the change they are ready
+              We create safe spaces for young people in Zambia to speak honestly,
+              about mental health, leadership, and the change they are ready
               to lead.
             </p>
 
@@ -230,11 +225,9 @@ export function HomeHero() {
             </div>
           </div>
 
-          {/* Spacer so desktop copy sits above the center-bottom square */}
           <div className="hidden h-[260px] lg:block" aria-hidden />
         </div>
 
-        {/* ——— Mobile / tablet: horizontal snap collage ——— */}
         <div className="relative z-10 -mx-5 pb-10 sm:-mx-8 lg:hidden">
           <div className="flex items-end gap-3 overflow-x-auto px-5 pb-1 snap-x snap-mandatory sm:gap-4 sm:px-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div
@@ -242,8 +235,8 @@ export function HomeHero() {
               className="flex w-[148px] shrink-0 snap-center flex-col gap-2.5 sm:w-[168px]"
             >
               <PhotoCard
+                src={heroLeft}
                 className="aspect-[3/4] w-full"
-                position="object-[18%_20%]"
                 priority
               />
               <CaptionCard>
@@ -257,8 +250,8 @@ export function HomeHero() {
               className="w-[148px] shrink-0 snap-center sm:w-[168px]"
             >
               <PhotoCard
+                src={heroMidLeft}
                 className="h-[210px] w-full sm:h-[240px]"
-                position="object-[42%_48%]"
               />
             </div>
 
@@ -266,10 +259,7 @@ export function HomeHero() {
               data-hero-card
               className="w-[148px] shrink-0 snap-center sm:w-[168px]"
             >
-              <PhotoCard
-                className="aspect-square w-full"
-                position="object-[50%_45%]"
-              />
+              <PhotoCard src={heroCenter} className="aspect-square w-full" />
             </div>
 
             <div
@@ -277,8 +267,8 @@ export function HomeHero() {
               className="w-[148px] shrink-0 snap-center sm:w-[168px]"
             >
               <PhotoCard
+                src={heroMidRight}
                 className="h-[210px] w-full sm:h-[240px]"
-                position="object-[68%_32%]"
                 overlay="Together, we turn honest conversation into lasting change."
               />
             </div>
@@ -287,10 +277,7 @@ export function HomeHero() {
               data-hero-card
               className="flex w-[148px] shrink-0 snap-center flex-col gap-2.5 sm:w-[168px]"
             >
-              <PhotoCard
-                className="aspect-[3/4] w-full"
-                position="object-[82%_40%]"
-              />
+              <PhotoCard src={heroRight} className="aspect-[3/4] w-full" />
               <CaptionCard>
                 Together, we turn honest conversation into lasting change.
               </CaptionCard>

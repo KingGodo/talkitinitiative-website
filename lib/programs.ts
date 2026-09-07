@@ -1,9 +1,12 @@
+import { galleryPhotos } from "@/lib/media";
+
 export type Program = {
   slug: string;
   title: string;
   summary: string;
   focus: string;
   position: string;
+  image: string;
   objectives: string[];
   beneficiaries: string[];
   activities: string[];
@@ -17,10 +20,11 @@ export const programs: Program[] = [
     summary:
       "Practical spaces where young people build voice, character, and the confidence to lead.",
     focus: "Voice · Character · Confidence",
-    position: "object-[22%_25%]",
+    position: "object-center",
+    image: galleryPhotos[9],
     objectives: [
       "Help young people practise speaking with clarity and courage",
-      "Build everyday leadership habits — listening, accountability, and care",
+      "Build everyday leadership habits, listening, accountability, and care",
       "Prepare emerging leaders to serve peers and communities across Zambia",
     ],
     beneficiaries: [
@@ -43,9 +47,10 @@ export const programs: Program[] = [
     slug: "mental-health-advocacy",
     title: "Mental Health Advocacy",
     summary:
-      "Breaking silence with honesty — peer dialogue, awareness, and support without judgment.",
+      "Breaking silence with honesty, peer dialogue, awareness, and support without judgment.",
     focus: "Awareness · Care · Support",
-    position: "object-[55%_40%]",
+    position: "object-center",
+    image: galleryPhotos[10],
     objectives: [
       "Normalize open conversation about mental health among young people",
       "Equip peer advocates with language and tools for safer dialogue",
@@ -73,7 +78,8 @@ export const programs: Program[] = [
     summary:
       "Conversation turned into action through webinars, panels, and community engagement.",
     focus: "Agency · Action · Belonging",
-    position: "object-[78%_48%]",
+    position: "object-center",
+    image: galleryPhotos[11],
     objectives: [
       "Help young people move from insight to concrete personal and civic action",
       "Create platforms where youth ideas are heard by peers and partners",
@@ -99,9 +105,10 @@ export const programs: Program[] = [
     slug: "community-engagement",
     title: "Community Engagement",
     summary:
-      "Dialogue that travels beyond the room — into neighbourhoods, campuses, and partner spaces.",
+      "Dialogue that travels beyond the room, into neighbourhoods, campuses, and partner spaces.",
     focus: "Reach · Partnership · Presence",
-    position: "object-[40%_55%]",
+    position: "object-center",
+    image: galleryPhotos[12],
     objectives: [
       "Extend Talk It Initiative circles into communities across Zambia",
       "Build trust with schools, faith spaces, and local organizations",

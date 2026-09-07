@@ -54,7 +54,7 @@ export function MediaView() {
               Stories & press
             </h1>
             <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-              Narrative from the rooms we hold — plus what journalists and
+              Narrative from the rooms we hold, plus what journalists and
               partners need to cover Talk It Initiative accurately.
             </p>
           </div>
@@ -166,7 +166,7 @@ export function MediaView() {
               Occasional updates
             </h2>
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[#6B7280]">
-              Circles, campaigns, and stories — no spam. You can unsubscribe any
+              Circles, campaigns, and stories, no spam. You can unsubscribe any
               time.
             </p>
           </div>

@@ -11,6 +11,7 @@ import { TestimonialsMarquee } from "@/components/home/testimonials-marquee";
 import { Button } from "@/components/ui/button";
 import { upcomingEvents } from "@/lib/events";
 import { impactMetrics } from "@/lib/impact";
+import { siteImages } from "@/lib/media";
 import { programs } from "@/lib/programs";
 import { cn } from "@/lib/utils";
 
@@ -18,11 +19,13 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function SectionPhoto({
   className,
-  position,
+  src,
+  position = "object-center",
   priority = false,
 }: {
   className?: string;
-  position: string;
+  src: string;
+  position?: string;
   priority?: boolean;
 }) {
   return (
@@ -33,7 +36,7 @@ function SectionPhoto({
       )}
     >
       <Image
-        src="/hero.jpg"
+        src={src}
         alt=""
         fill
         unoptimized
@@ -48,7 +51,7 @@ function SectionPhoto({
 const testimonials = [
   {
     quote:
-      "Talk It Initiative gave me a space where I could finally speak about what I was carrying — and feel understood.",
+      "Talk It Initiative gave me a space where I could finally speak about what I was carrying, and feel understood.",
     name: "Chanda M.",
     role: "Youth participant · Lusaka",
     initials: "CM",
@@ -76,7 +79,7 @@ const testimonials = [
   },
   {
     quote:
-      "As a parent, I finally saw my child open up. These spaces matter — and the facilitation is careful and respectful.",
+      "As a parent, I finally saw my child open up. These spaces matter, and the facilitation is careful and respectful.",
     name: "Grace N.",
     role: "Parent supporter",
     initials: "GN",
@@ -90,14 +93,14 @@ const testimonials = [
   },
   {
     quote:
-      "I used to stay quiet in rooms. Now I speak up — in class, at home, and for my peers.",
+      "I used to stay quiet in rooms. Now I speak up, in class, at home, and for my peers.",
     name: "Natasha P.",
     role: "Campus circle member",
     initials: "NP",
   },
   {
     quote:
-      "Donating felt different here. You can see the care in every session — real young people, real change.",
+      "Donating felt different here. You can see the care in every session, real young people, real change.",
     name: "Kenneth R.",
     role: "Monthly donor",
     initials: "KR",
@@ -148,7 +151,7 @@ export function HomeSections() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-[36rem] text-[16px] leading-relaxed text-[#6B7280] sm:mt-7 sm:text-[19px]">
-              Talk It Initiative is dialogue-first — turning conversation into
+              Talk It Initiative is dialogue-first, turning conversation into
               personal growth, community care, and civic action across Zambia.
             </p>
           </div>
@@ -158,21 +161,21 @@ export function HomeSections() {
             className="mt-14 flex items-end justify-center gap-3 sm:mt-16 sm:gap-4 lg:gap-5"
           >
             <SectionPhoto
+              src={siteImages.homeMission[0]}
               className="hidden h-[220px] w-[150px] sm:block lg:h-[260px] lg:w-[180px]"
-              position="object-[18%_22%]"
             />
             <SectionPhoto
+              src={siteImages.homeMission[1]}
               className="h-[200px] w-[140px] sm:h-[260px] sm:w-[170px] lg:h-[300px] lg:w-[200px]"
-              position="object-[48%_40%]"
               priority
             />
             <SectionPhoto
+              src={siteImages.homeMission[2]}
               className="h-[160px] w-[140px] sm:h-[200px] sm:w-[160px] lg:h-[220px] lg:w-[180px]"
-              position="object-[70%_45%]"
             />
             <SectionPhoto
+              src={siteImages.homeMission[3]}
               className="hidden h-[240px] w-[150px] md:block lg:h-[280px] lg:w-[175px]"
-              position="object-[85%_35%]"
             />
           </div>
 
@@ -227,7 +230,7 @@ export function HomeSections() {
         </div>
       </section>
 
-      {/* Programs — editorial split */}
+      {/* Programs, editorial split */}
       <section className="bg-[#FAFAFA] py-28 sm:py-36 lg:py-40">
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
@@ -240,18 +243,18 @@ export function HomeSections() {
               </h2>
               <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
                 Each program opens a structured space for young people to speak
-                with honesty — then leave with clarity, confidence, and a path
+                with honesty, then leave with clarity, confidence, and a path
                 to lead.
               </p>
 
               <div className="mt-8 hidden gap-3 sm:flex lg:mt-10">
                 <SectionPhoto
+                  src={siteImages.homePrograms[0]}
                   className="h-[220px] w-[140px] lg:h-[260px] lg:w-[155px]"
-                  position="object-[20%_28%]"
                 />
                 <SectionPhoto
+                  src={siteImages.homePrograms[1]}
                   className="mt-10 h-[180px] w-[120px] lg:h-[210px] lg:w-[135px]"
-                  position="object-[70%_40%]"
                 />
               </div>
 
@@ -290,7 +293,7 @@ export function HomeSections() {
         </div>
       </section>
 
-      {/* Impact — typographic, no photos */}
+      {/* Impact, typographic, no photos */}
       <section className="bg-white py-28 sm:py-36 lg:py-40">
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div
@@ -301,7 +304,7 @@ export function HomeSections() {
               Impact across Zambia
             </h2>
             <p className="max-w-md self-end text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-              Progress here is measured in courage spoken aloud — every dialogue
+              Progress here is measured in courage spoken aloud, every dialogue
               session, panel, and gathering is another young person heard.
             </p>
           </div>
@@ -369,6 +372,7 @@ export function HomeSections() {
                 className="grid items-center gap-4 rounded-[22px] border border-black/[0.05] bg-white p-3 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:p-4"
               >
                 <SectionPhoto
+                  src={event.image}
                   className="aspect-[5/4] w-full sm:aspect-square sm:h-[7.5rem] sm:w-[7.5rem]"
                   position={event.position}
                 />
@@ -396,7 +400,7 @@ export function HomeSections() {
         </div>
       </section>
 
-      {/* Testimonials — vertical auto-scroll social proof */}
+      {/* Testimonials, vertical auto-scroll social proof */}
       <section className="bg-white py-28 sm:py-36 lg:py-40">
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div data-reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -408,7 +412,7 @@ export function HomeSections() {
                 People who joined Talk It Initiative.
               </h2>
               <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-[#6B7280] sm:text-[17px]">
-                From first-time participants to volunteers, partners, and donors —
+                From first-time participants to volunteers, partners, and donors,
                 these voices show what becomes possible when you step into the
                 circle.
               </p>
@@ -427,14 +431,14 @@ export function HomeSections() {
         </div>
       </section>
 
-      {/* Closing CTA — one clear composition */}
+      {/* Closing CTA, one clear composition */}
       <section className="relative isolate overflow-hidden bg-[#043a57]">
         <Image
-          src="/hero.jpg"
+          src={siteImages.homeCta}
           alt=""
           fill
           unoptimized
-          className="object-cover object-[58%_42%] opacity-45"
+          className="object-cover object-center opacity-45"
           sizes="100vw"
         />
         <div
@@ -454,7 +458,7 @@ export function HomeSections() {
               Your voice belongs here.
             </h2>
             <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-white/75 sm:text-[18px]">
-              Join the circle — volunteer, partner, or give — and help create
+              Join the circle, volunteer, partner, or give, and help create
               safer spaces where young people in Zambia can speak and lead.
             </p>
 

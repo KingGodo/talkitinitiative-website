@@ -17,17 +17,17 @@ export const impactMetrics = [
   {
     value: "5+",
     label: "Provinces reached",
-    detail: "In-person and online — still expanding",
+    detail: "In-person and online, still expanding",
   },
 ] as const;
 
 export const impactMetricsNote =
-  "Figures are early operational estimates for 2024–2026 as Talk It Initiative builds formal monitoring. We will replace them with audited programme data as capacity grows.";
+  "Figures are early operational estimates for 2024,2026 as Talk It Initiative builds formal monitoring. We will replace them with audited programme data as capacity grows.";
 
 export const impactPillars = [
   {
     title: "Courage spoken aloud",
-    body: "Every circle is a chance for a young person to name what they carry — and be heard without judgment.",
+    body: "Every circle is a chance for a young person to name what they carry, and be heard without judgment.",
   },
   {
     title: "Leaders formed in practice",
@@ -46,7 +46,7 @@ export const impactStories = [
     place: "Lusaka",
     program: "Mental Health Advocacy",
     summary:
-      "What began as a quiet Tuesday gathering became a recurring room where students named stress, stigma, and hope — then invited others in.",
+      "What began as a quiet Tuesday gathering became a recurring room where students named stress, stigma, and hope, then invited others in.",
     outcome:
       "Peer facilitators now open new circles each term, keeping the method alive beyond a single event.",
   },
@@ -58,7 +58,7 @@ export const impactStories = [
     summary:
       "A volunteer joined to help set up chairs. Months later they were guiding dialogue with care, structure, and confidence.",
     outcome:
-      "That shift — participant to steward — is how Talk It Initiative multiplies impact without losing quality.",
+      "That shift, participant to steward, is how Talk It Initiative multiplies impact without losing quality.",
   },
   {
     slug: "partner-outreach",
@@ -68,14 +68,14 @@ export const impactStories = [
     summary:
       "Working with a local organisation, Talk It Initiative brought dialogue into a neighbourhood that had never hosted a structured youth circle.",
     outcome:
-      "Parents and youth now ask for the next session — trust built one honest conversation at a time.",
+      "Parents and youth now ask for the next session, trust built one honest conversation at a time.",
   },
 ] as const;
 
 export const impactQuotes = [
   {
     quote:
-      "Talk It Initiative gave me a space where I could finally speak about what I was carrying — and feel understood.",
+      "Talk It Initiative gave me a space where I could finally speak about what I was carrying, and feel understood.",
     name: "Chanda M.",
     role: "Youth participant · Lusaka",
   },

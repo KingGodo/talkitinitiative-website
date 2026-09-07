@@ -19,7 +19,7 @@ export const partnerTypes = [
 
 export const partnerPrinciples = [
   "Safeguarding and dignity are non-negotiable in every co-hosted space.",
-  "Young people remain central — partners amplify the room, they do not replace youth voice.",
+  "Young people remain central, partners amplify the room, they do not replace youth voice.",
   "We name partnerships publicly only with mutual agreement.",
   "In-kind and financial support are both valued when they advance safe dialogue.",
 ] as const;
