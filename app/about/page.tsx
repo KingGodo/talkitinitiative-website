@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 import { AboutView } from "@/components/about/about-view";
+import { site } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "Learn about Talk It Initiative, a youth-led nonprofit in Zambia creating safe spaces for honest conversation, mental health, and leadership.",
+  description: site.description,
 };
 
 export default function AboutPage() {

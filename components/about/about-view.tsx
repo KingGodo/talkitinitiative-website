@@ -9,18 +9,25 @@ import { useRef } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
+  aboutIntro,
   aboutMission,
+  aboutObjectives,
   aboutPolicies,
-  aboutTimeline,
+  aboutStory,
   aboutValues,
   aboutVision,
+  aboutWorkGrounding,
 } from "@/lib/about";
-import { boardNote, leadershipTeam } from "@/lib/leadership";
+import { boardMembers, leadershipIntro } from "@/lib/leadership";
 import { siteImages } from "@/lib/media";
 import { site } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+const leadershipPreview = boardMembers
+  .filter((member) => member.status === "confirmed" && member.image)
+  .slice(0, 4);
 
 function AboutPhoto({
   className,
@@ -86,17 +93,18 @@ export function AboutView() {
           <div className="grid items-end gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
             <div data-reveal>
               <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
-                Talk It Initiative
+                {site.name}
               </p>
-              <h1 className="mt-4 text-[44px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[60px] lg:text-[68px]">
-                About
+              <h1 className="mt-4 text-[24px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+                About Talk It Initiative
               </h1>
-              <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-                A youth-led nonprofit creating safe spaces for honest
-                conversation, mental health, leadership, and civic
-                responsibility across Zambia.
+              <p className="mt-6 max-w-[34rem] text-[14px] leading-relaxed text-[#6B7280] sm:text-[14px]">
+                {aboutIntro}
               </p>
-              <p className="mt-5 text-[15px] font-semibold tracking-[-0.015em] text-[#1F2937]">
+              <p className="mt-5 max-w-[34rem] text-[13px] leading-relaxed text-[#6B7280] sm:text-[14px]">
+                {aboutWorkGrounding}
+              </p>
+              <p className="mt-5 text-[13px] font-semibold tracking-[-0.015em] text-[#1F2937]">
                 {site.tagline}
               </p>
             </div>
@@ -119,7 +127,7 @@ export function AboutView() {
               ["#story", "Our story"],
               ["#mission", "Mission & vision"],
               ["#values", "Values"],
-              ["#journey", "Journey"],
+              ["#objectives", "Objectives"],
               ["#leadership", "Leadership"],
               ["#policies", "Policies"],
             ].map(([href, label]) => (
@@ -135,7 +143,7 @@ export function AboutView() {
         </div>
       </section>
 
-      {/* Story */}
+      {/* Our Story */}
       <section
         id="story"
         className="scroll-mt-28 border-t border-black/[0.06] bg-[#FAFAFA] py-20 sm:py-28"
@@ -143,50 +151,55 @@ export function AboutView() {
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div
             data-reveal
-            className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16"
+            className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
           >
             <div>
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 Our story
               </p>
-              <h2 className="mt-3 max-w-[12ch] text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[40px]">
-                Founded on dialogue
+              <h2 className="mt-2 text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+                From founding to registration
               </h2>
             </div>
-            <div className="space-y-5 text-[16px] leading-relaxed text-[#6B7280] sm:text-[17px]">
-              <p>
-                Talk It Initiative started in 2024 with a clear belief: when
-                young people are given a careful room to speak, they do not only
-                feel lighter, they learn how to lead.
-              </p>
-              <p>
-                Too often, stress, stigma, and silence keep youth carrying what
-                should be shared. We answered with structured conversation,
-                peer dialogue, facilitation, and programmes that turn honesty
-                into agency.
-              </p>
-              <p>
-                Today we remain youth-led and dialogue-first, growing provincial
-                reach while keeping every circle grounded in care,
-                accountability, and belonging.
-              </p>
-            </div>
+            <p className="max-w-sm text-[14px] leading-relaxed text-[#6B7280]">
+              Founded {site.foundedFull}, constitution adopted{" "}
+              {site.constitutionAdopted}, registered {site.registered}.
+            </p>
           </div>
+
+          <ol className="mt-12 border-t border-black/[0.08] sm:mt-14">
+            {aboutStory.map((item) => (
+              <li
+                key={`${item.year}-${item.title}`}
+                data-reveal
+                className="grid gap-3 border-b border-black/[0.08] py-8 sm:grid-cols-[7.5rem_1fr] sm:gap-10 sm:py-10"
+              >
+                <p className="font-mono text-[13px] tracking-[0.06em] text-brand">
+                  {item.year}
+                </p>
+                <div>
+                  <h3 className="text-[14px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[20px]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-[#6B7280] sm:text-[13px]">
+                    {item.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section
-        id="mission"
-        className="scroll-mt-28 bg-white py-20 sm:py-28"
-      >
+      <section id="mission" className="scroll-mt-28 bg-white py-20 sm:py-28">
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div data-reveal className="border-t border-black/[0.08] pt-8">
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 Mission
               </p>
-              <p className="mt-5 text-[22px] leading-[1.25] font-semibold tracking-[-0.025em] text-[#1F2937] sm:text-[26px]">
+              <p className="mt-5 text-[18px] leading-[1.25] font-semibold tracking-[-0.025em] text-[#1F2937] sm:text-[20px]">
                 {aboutMission}
               </p>
             </div>
@@ -194,7 +207,7 @@ export function AboutView() {
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 Vision
               </p>
-              <p className="mt-5 text-[22px] leading-[1.25] font-semibold tracking-[-0.025em] text-[#1F2937] sm:text-[26px]">
+              <p className="mt-5 text-[18px] leading-[1.25] font-semibold tracking-[-0.025em] text-[#1F2937] sm:text-[20px]">
                 {aboutVision}
               </p>
             </div>
@@ -210,17 +223,17 @@ export function AboutView() {
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <h2
             data-reveal
-            className="max-w-[14ch] text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]"
+            className="max-w-[14ch] text-[24px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]"
           >
             Core values
           </h2>
-          <div className="mt-12 grid gap-10 border-t border-black/[0.08] pt-10 sm:mt-14 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12 lg:grid-cols-4 lg:pt-12">
+          <div className="mt-12 grid gap-10 border-t border-black/[0.08] pt-10 sm:mt-14 sm:grid-cols-2 sm:gap-x-12 sm:gap-y-12 lg:grid-cols-5 lg:pt-12">
             {aboutValues.map((value, index) => (
               <div key={value.title} data-reveal>
                 <p className="font-mono text-[12px] tracking-[0.08em] text-brand/70">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.02em] text-[#1F2937]">
+                <h3 className="mt-3 text-[14px] font-semibold tracking-[-0.02em] text-[#1F2937]">
                   {value.title}
                 </h3>
                 <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280]">
@@ -232,52 +245,50 @@ export function AboutView() {
         </div>
       </section>
 
-      {/* Journey */}
-      <section id="journey" className="scroll-mt-28 bg-white py-20 sm:py-28">
+      {/* Objectives */}
+      <section
+        id="objectives"
+        className="scroll-mt-28 bg-white py-20 sm:py-28"
+      >
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div
             data-reveal
-            className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+            className="grid gap-6 border-b border-black/[0.08] pb-10 sm:grid-cols-[1fr_1.1fr] sm:items-end sm:gap-12 sm:pb-12"
           >
             <div>
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
-                Timeline
+                Objectives
               </p>
-              <h2 className="mt-2 text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
-                Our journey
+              <h2 className="mt-3 max-w-[16ch] text-[24px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+                What we set out to do
               </h2>
             </div>
-            <p className="max-w-sm text-[14px] leading-relaxed text-[#6B7280]">
-              From first conversations to growing programmes, still learning,
-              still opening rooms.
+            <p className="max-w-md text-[13px] leading-relaxed text-[#6B7280] sm:text-[14px]">
+              Constitutional objectives guiding our programmes, partnerships and
+              advocacy.
             </p>
           </div>
 
-          <ol className="mt-12 border-t border-black/[0.08] sm:mt-14">
-            {aboutTimeline.map((item) => (
+          <ol className="mt-10 space-y-0 sm:mt-12">
+            {aboutObjectives.map((objective, index) => (
               <li
-                key={`${item.year}-${item.title}`}
+                key={objective}
                 data-reveal
-                className="grid gap-3 border-b border-black/[0.08] py-8 sm:grid-cols-[7rem_1fr] sm:gap-10 sm:py-10"
+                className="grid gap-3 border-b border-black/[0.08] py-6 sm:grid-cols-[3.5rem_1fr] sm:gap-8 sm:py-7"
               >
-                <p className="font-mono text-[13px] tracking-[0.06em] text-brand">
-                  {item.year}
+                <p className="font-mono text-[13px] tracking-[0.08em] text-brand">
+                  {String(index + 1).padStart(2, "0")}
                 </p>
-                <div>
-                  <h3 className="text-[18px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[20px]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 max-w-2xl text-[14px] leading-relaxed text-[#6B7280] sm:text-[15px]">
-                    {item.body}
-                  </p>
-                </div>
+                <p className="text-[13px] leading-relaxed text-[#1F2937] sm:text-[14px]">
+                  {objective}
+                </p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* Leadership preview */}
       <section
         id="leadership"
         className="scroll-mt-28 border-t border-black/[0.06] bg-[#FAFAFA] py-20 sm:py-28"
@@ -291,34 +302,35 @@ export function AboutView() {
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 Leadership
               </p>
-              <h2 className="mt-3 max-w-[14ch] text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+              <h2 className="mt-3 max-w-[14ch] text-[24px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
                 Youth-led from day one
               </h2>
             </div>
-            <p className="max-w-md text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
-              Meet the people stewarding Talk It Initiative, direction,
-              programmes, finance, technology, and provincial reach.
+            <p className="max-w-md text-[13px] leading-relaxed text-[#6B7280] sm:text-[14px]">
+              {leadershipIntro}
             </p>
           </div>
 
-          <div className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-            {leadershipTeam.map((person, index) => (
+          <div className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+            {leadershipPreview.map((person, index) => (
               <div key={person.name} data-reveal className="flex gap-4">
                 <div className="relative size-14 shrink-0 overflow-hidden rounded-full bg-[#f3f3f3] ring-2 ring-brand/10">
-                  <Image
-                    src={person.image}
-                    alt=""
-                    fill
-                    unoptimized
-                    className="object-cover object-top"
-                    sizes="56px"
-                  />
+                  {person.image ? (
+                    <Image
+                      src={person.image}
+                      alt=""
+                      fill
+                      unoptimized
+                      className="object-cover object-top"
+                      sizes="56px"
+                    />
+                  ) : null}
                 </div>
                 <div className="min-w-0">
                   <p className="font-mono text-[11px] tracking-[0.08em] text-brand/70">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-1 text-[16px] font-semibold tracking-[-0.02em] text-[#1F2937]">
+                  <h3 className="mt-1 text-[14px] font-semibold tracking-[-0.02em] text-[#1F2937]">
                     {person.name}
                   </h3>
                   <p className="mt-0.5 text-[13px] font-medium text-brand">
@@ -334,7 +346,7 @@ export function AboutView() {
               href="/team"
               className="inline-flex text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
             >
-              View organisational chart & full profiles →
+              Meet Our Leadership →
             </Link>
           </div>
 
@@ -343,14 +355,15 @@ export function AboutView() {
             className="mt-12 grid items-center gap-8 border-t border-black/[0.08] pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14"
           >
             <div>
-              <h3 className="text-[18px] font-semibold text-[#1F2937]">
+              <h3 className="text-[14px] font-semibold text-[#1F2937]">
                 Board of Directors
               </h3>
-              <p className="mt-3 max-w-md text-[14px] leading-relaxed text-[#6B7280] sm:text-[15px]">
-                {boardNote}
+              <p className="mt-3 max-w-md text-[14px] leading-relaxed text-[#6B7280] sm:text-[13px]">
+                Youth-led leadership stewards strategic direction, oversight and
+                accountability for {site.name}.
               </p>
               <p className="mt-5 text-[14px] text-[#6B7280]">
-                Media and governance:{" "}
+                Governance enquiries:{" "}
                 <a
                   href={`mailto:${site.email}?subject=${encodeURIComponent("Leadership / governance enquiry")}`}
                   className="font-semibold text-brand transition-opacity hover:opacity-75"
@@ -358,12 +371,6 @@ export function AboutView() {
                   {site.email}
                 </a>
               </p>
-              <Link
-                href="/transparency"
-                className="mt-4 inline-block text-[14px] font-semibold text-brand"
-              >
-                Transparency & reports →
-              </Link>
             </div>
             <AboutPhoto
               src={siteImages.about[1]}
@@ -384,13 +391,13 @@ export function AboutView() {
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 Policies & compliance
               </p>
-              <h2 className="mt-3 text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+              <h2 className="mt-3 text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
                 How we stay accountable
               </h2>
             </div>
-            <p className="max-w-lg text-[15px] leading-relaxed text-[#6B7280]">
-              Safeguarding and privacy sit at the centre of every circle. Full
-              policy texts are published; annual reports continue under{" "}
+            <p className="max-w-lg text-[13px] leading-relaxed text-[#6B7280]">
+              Safeguarding, privacy and our Constitution guide how we work.
+              Annual reports continue under{" "}
               <Link href="/transparency" className="font-semibold text-brand">
                 Transparency
               </Link>
@@ -400,7 +407,7 @@ export function AboutView() {
 
           <ul
             data-reveal
-            className="mt-10 grid gap-0 border-t border-black/[0.08] sm:mt-12 sm:grid-cols-3"
+            className="mt-10 grid gap-0 border-t border-black/[0.08] sm:mt-12 sm:grid-cols-3 lg:grid-cols-5"
           >
             {aboutPolicies.map((policy) => (
               <li
@@ -409,7 +416,7 @@ export function AboutView() {
               >
                 <Link
                   href={policy.href}
-                  className="flex items-center justify-between gap-4 px-0 py-5 text-[15px] font-semibold text-[#1F2937] transition-colors hover:text-brand sm:px-6 sm:first:pl-0 sm:last:pr-0"
+                  className="flex items-center justify-between gap-4 px-0 py-5 text-[13px] font-semibold text-[#1F2937] transition-colors hover:text-brand sm:px-4 sm:first:pl-0 sm:last:pr-0 lg:px-5"
                 >
                   {policy.label}
                   <span aria-hidden className="text-brand">
@@ -428,28 +435,36 @@ export function AboutView() {
           className="mx-auto max-w-[720px] px-5 text-center sm:px-8"
           data-reveal
         >
-          <h2 className="text-[32px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[40px]">
-            Be part of the story
+          <h2 className="text-[24px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+            Continue exploring
           </h2>
-          <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
-            Volunteer, partner, or support the work, every new voice makes the
-            room stronger.
+          <p className="mx-auto mt-5 max-w-md text-[14px] leading-relaxed text-[#6B7280]">
+            Meet the Board, read our Constitution, or explore the programmes
+            advancing youth empowerment and civic participation.
           </p>
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
             <Button
               nativeButton={false}
-              render={<Link href="/get-involved" />}
-              className="h-12 rounded-full bg-brand px-7 text-[15px] font-semibold text-white hover:bg-brand/90"
+              render={<Link href="/team" />}
+              className="h-12 rounded-full bg-brand px-7 text-[13px] font-semibold text-white hover:bg-brand/90"
             >
-              Get Involved
+              Meet Our Leadership
             </Button>
             <Button
               nativeButton={false}
-              render={<Link href="/contact" />}
+              render={<Link href="/resources#constitution" />}
               variant="outline"
-              className="h-12 rounded-full border-black/10 bg-white px-7 text-[15px] font-medium text-[#1F2937] hover:bg-white hover:text-[#1F2937]"
+              className="h-12 rounded-full border-black/10 bg-white px-7 text-[13px] font-medium text-[#1F2937] hover:bg-white hover:text-[#1F2937]"
             >
-              Contact us
+              Read Constitution
+            </Button>
+            <Button
+              nativeButton={false}
+              render={<Link href="/programs" />}
+              variant="outline"
+              className="h-12 rounded-full border-black/10 bg-white px-7 text-[13px] font-medium text-[#1F2937] hover:bg-white hover:text-[#1F2937]"
+            >
+              Explore Our Work
             </Button>
           </div>
         </div>

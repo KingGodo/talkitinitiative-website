@@ -32,9 +32,10 @@ export const metadata: Metadata = {
   keywords: [
     "Talk It Initiative",
     "Zambia",
-    "youth",
-    "mental health",
-    "leadership",
+    "youth empowerment",
+    "civic participation",
+    "community transformation",
+    "youth leadership",
     "dialogue",
     "nonprofit",
   ],

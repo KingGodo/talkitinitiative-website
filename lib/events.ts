@@ -22,12 +22,12 @@ export const events: SiteEvent[] = [
     dateISO: "2026-07-22",
     place: "Online · Zambia",
     format: "Online",
-    program: "Mental Health Advocacy",
+    program: "Mental Health & Wellbeing",
     summary:
       "A recurring dialogue circle for young people to speak honestly about what they are carrying, peer-led, judgment-free, and practical.",
     position: "object-center",
     image: galleryPhotos[0],
-    status: "upcoming",
+    status: "past",
   },
   {
     slug: "campus-conversation-aug-05",
@@ -41,7 +41,7 @@ export const events: SiteEvent[] = [
       "An on-campus gathering where students practise open conversation, listen well, and leave with clearer next steps.",
     position: "object-center",
     image: galleryPhotos[1],
-    status: "upcoming",
+    status: "past",
   },
   {
     slug: "youth-leadership-panel-aug-18",
@@ -50,12 +50,12 @@ export const events: SiteEvent[] = [
     dateISO: "2026-08-18",
     place: "Community Hub",
     format: "Hybrid",
-    program: "Leadership Development",
+    program: "Youth Leadership & Development",
     summary:
       "Young leaders and facilitators share what it takes to hold space, build confidence, and serve peers with care.",
     position: "object-center",
     image: galleryPhotos[2],
-    status: "upcoming",
+    status: "past",
   },
   {
     slug: "community-listening-jun-10",
@@ -78,7 +78,7 @@ export const events: SiteEvent[] = [
     dateISO: "2026-06-24",
     place: "Online · Zambia",
     format: "Online",
-    program: "Mental Health Advocacy",
+    program: "Mental Health & Wellbeing",
     summary:
       "An evening online circle focused on stigma, support, and speaking early, facilitators guided a careful, respectful room.",
     position: "object-center",
@@ -92,7 +92,7 @@ export const events: SiteEvent[] = [
     dateISO: "2026-05-18",
     place: "Lusaka",
     format: "In person",
-    program: "Leadership Development",
+    program: "Youth Leadership & Development",
     summary:
       "Volunteers practised holding dialogue with structure: opening, listening cues, and closing a circle well.",
     position: "object-center",

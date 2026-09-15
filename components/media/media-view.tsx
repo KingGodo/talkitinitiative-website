@@ -50,10 +50,10 @@ export function MediaView() {
             <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
               Media
             </p>
-            <h1 className="mt-4 text-[44px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[60px] lg:text-[68px]">
+            <h1 className="mt-4 text-[24px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Stories & press
             </h1>
-            <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
+            <p className="mt-6 max-w-[32rem] text-[14px] leading-relaxed text-[#6B7280] sm:text-[14px]">
               Narrative from the rooms we hold, plus what journalists and
               partners need to cover Talk It Initiative accurately.
             </p>
@@ -67,7 +67,7 @@ export function MediaView() {
             data-reveal
             className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
           >
-            <h2 className="text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+            <h2 className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Recent stories
             </h2>
             <Link
@@ -94,10 +94,10 @@ export function MediaView() {
                     <span className="text-[#D1D5DB]">·</span>
                     <span>{story.dateLabel}</span>
                   </div>
-                  <h3 className="mt-2 text-[20px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[22px]">
+                  <h3 className="mt-2 text-[20px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[17px]">
                     {story.title}
                   </h3>
-                  <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-[#6B7280]">
+                  <p className="mt-3 max-w-xl text-[13px] leading-relaxed text-[#6B7280]">
                     {story.summary}
                   </p>
                 </div>
@@ -117,14 +117,14 @@ export function MediaView() {
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <h2
             data-reveal
-            className="text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]"
+            className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]"
           >
             Press kit
           </h2>
           <div className="mt-10 grid gap-8 border-t border-black/[0.08] pt-10 sm:grid-cols-2 lg:grid-cols-4">
             {mediaKitItems.map((item) => (
               <div key={item.title} data-reveal>
-                <h3 className="text-[16px] font-semibold text-[#1F2937]">
+                <h3 className="text-[14px] font-semibold text-[#1F2937]">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280]">
@@ -136,7 +136,7 @@ export function MediaView() {
 
           <blockquote
             data-reveal
-            className="mt-12 rounded-[22px] border border-black/[0.08] bg-[#FAFAFA] p-6 text-[15px] leading-relaxed text-[#4B5563] sm:p-8 sm:text-[16px]"
+            className="mt-12 rounded-[22px] border border-black/[0.08] bg-[#FAFAFA] p-6 text-[13px] leading-relaxed text-[#4B5563] sm:p-8 sm:text-[14px]"
           >
             {pressBoilerplate}
           </blockquote>
@@ -162,10 +162,10 @@ export function MediaView() {
             <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
               Stay in the loop
             </p>
-            <h2 className="mt-3 text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+            <h2 className="mt-3 text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Occasional updates
             </h2>
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[#6B7280]">
+            <p className="mt-5 max-w-md text-[13px] leading-relaxed text-[#6B7280]">
               Circles, campaigns, and stories, no spam. You can unsubscribe any
               time.
             </p>
@@ -185,10 +185,10 @@ export function MediaView() {
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-[720px] px-5 text-center sm:px-8" data-reveal>
-          <h2 className="text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+          <h2 className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
             Media enquiry
           </h2>
-          <p className="mx-auto mt-4 max-w-md text-[15px] text-[#6B7280]">
+          <p className="mx-auto mt-4 max-w-md text-[13px] text-[#6B7280]">
             Interviews, features, and photo requests.
           </p>
           <div className="mx-auto mt-8 max-w-md text-left">

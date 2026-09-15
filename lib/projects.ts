@@ -13,20 +13,21 @@ export type Project = {
   outcomes: string;
 };
 
+/** Publish only genuine projects. Details below are illustrative placeholders pending Board verification. */
 export const projects: Project[] = [
   {
     slug: "campus-circle-lusaka",
     title: "Campus Circles, Lusaka",
     status: "active",
     place: "Lusaka",
-    program: "Mental Health Advocacy",
+    program: "Youth Empowerment",
     period: "2025, ongoing",
     summary:
-      "Recurring peer-led dialogue on campus so students can name stress, stigma, and hope, then invite others in.",
+      "Recurring peer-led campus dialogues where students practise speaking, listening and turning conversation into next steps.",
     objectives: [
-      "Hold regular judgment-free circles for students",
+      "Hold regular dialogue circles for students",
       "Train peer facilitators to open new rooms each term",
-      "Reduce isolation around mental health on campus",
+      "Strengthen youth voice, confidence and peer support on campus",
     ],
     partners: "Campus student groups and host venues",
     outcomes:
@@ -36,15 +37,15 @@ export const projects: Project[] = [
     slug: "facilitator-pipeline",
     title: "Volunteer to Facilitator Pipeline",
     status: "active",
-    place: "Central Province & online",
-    program: "Leadership Development",
+    place: "Central Province and online",
+    program: "Youth Leadership & Development",
     period: "2025, ongoing",
     summary:
-      "A pathway that turns first-time volunteers into stewards who can guide dialogue with care and structure.",
+      "A pathway that turns first-time volunteers into facilitators who can guide dialogue with care and structure.",
     objectives: [
       "Provide practice labs for listening and facilitation",
       "Pair new volunteers with experienced mentors",
-      "Multiply quality circles without losing safeguarding standards",
+      "Grow facilitation capacity while upholding safeguarding standards",
     ],
     partners: "Talk It Initiative facilitators and community hosts",
     outcomes:
@@ -73,10 +74,10 @@ export const projects: Project[] = [
     title: "Provincial Dialogue Expansion",
     status: "upcoming",
     place: "Provinces across Zambia",
-    program: "Youth Empowerment",
+    program: "Civic Education & Participation",
     period: "2026, planning",
     summary:
-      "Grow Talk It Tuesday and community circles beyond early hubs so more young people have a room nearby.",
+      "Grow dialogues and civic education beyond early hubs so more young people can participate nearby.",
     objectives: [
       "Map host venues and youth networks in new districts",
       "Train provincial peer facilitators",

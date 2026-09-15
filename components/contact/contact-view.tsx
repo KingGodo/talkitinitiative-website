@@ -51,12 +51,12 @@ export function ContactView() {
             <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
               Talk It Initiative
             </p>
-            <h1 className="mt-4 text-[44px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[60px] lg:text-[68px]">
+            <h1 className="mt-4 text-[24px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Contact
             </h1>
-            <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-              Reach the team about volunteering, partnerships, donations,
-              events, or anything else related to the work.
+            <p className="mt-6 max-w-[32rem] text-[14px] leading-relaxed text-[#6B7280] sm:text-[14px]">
+              Reach the team about membership, volunteering, partnerships,
+              programmes, research, media or safeguarding.
             </p>
           </div>
         </div>
@@ -69,9 +69,19 @@ export function ContactView() {
               <p className="text-[13px] font-semibold text-[#1F2937]">Email</p>
               <a
                 href={`mailto:${site.email}`}
-                className="mt-2 inline-block text-[17px] font-semibold tracking-[-0.02em] text-brand transition-opacity hover:opacity-75 sm:text-[18px]"
+                className="mt-2 inline-block text-[14px] font-semibold tracking-[-0.02em] text-brand transition-opacity hover:opacity-75 sm:text-[14px]"
               >
                 {site.email}
+              </a>
+            </div>
+
+            <div>
+              <p className="text-[13px] font-semibold text-[#1F2937]">Phone</p>
+              <a
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
+                className="mt-2 inline-block text-[14px] font-semibold tracking-[-0.02em] text-brand transition-opacity hover:opacity-75 sm:text-[14px]"
+              >
+                {site.phone}
               </a>
             </div>
 
@@ -79,9 +89,9 @@ export function ContactView() {
               <p className="text-[13px] font-semibold text-[#1F2937]">
                 Based in
               </p>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#6B7280]">
-                Zambia, with online gatherings and community sessions across
-                provinces as the work grows.
+              <p className="mt-2 text-[13px] leading-relaxed text-[#6B7280]">
+                Based in Zambia, working with young people and communities
+                across Zambia through online and in-person activities.
               </p>
             </div>
 
@@ -90,6 +100,14 @@ export function ContactView() {
                 Looking for a pathway?
               </p>
               <ul className="mt-3 space-y-2">
+                <li>
+                  <Link
+                    href="/membership"
+                    className="text-[14px] font-medium text-[#6B7280] transition-colors hover:text-brand"
+                  >
+                    Membership →
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/get-involved"
@@ -130,7 +148,7 @@ export function ContactView() {
             data-reveal
             className="rounded-[24px] border border-black/[0.08] bg-[#FAFAFA] p-6 sm:p-8 lg:p-10"
           >
-            <h2 className="text-[22px] font-bold tracking-[-0.025em] text-[#1F2937] sm:text-[24px]">
+            <h2 className="text-[18px] font-bold tracking-[-0.025em] text-[#1F2937] sm:text-[22px]">
               Send a message
             </h2>
             <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280]">
@@ -142,7 +160,7 @@ export function ContactView() {
               <InterestForm
                 type="contact"
                 topics={contactTopics}
-                topicDefault="General enquiry"
+                topicDefault="General Enquiries"
                 submitLabel="Send message"
               />
             </div>
@@ -163,11 +181,11 @@ export function ContactView() {
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 FAQ
               </p>
-              <h2 className="mt-3 max-w-[12ch] text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[40px]">
+              <h2 className="mt-3 max-w-[12ch] text-[24px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
                 Common questions
               </h2>
             </div>
-            <p className="max-w-md text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
+            <p className="max-w-md text-[13px] leading-relaxed text-[#6B7280] sm:text-[14px]">
               Quick answers before you write, still stuck? Email us and we’ll
               help you find the right next step.
             </p>
@@ -186,12 +204,12 @@ export function ContactView() {
                       <span className="mt-1 shrink-0 font-mono text-[12px] tracking-[0.08em] text-brand/70 sm:text-[13px]">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <span className="text-[17px] leading-snug font-semibold tracking-[-0.02em] text-[#1F2937] transition-colors group-hover/faq:text-brand sm:text-[20px]">
+                      <span className="text-[14px] leading-snug font-semibold tracking-[-0.02em] text-[#1F2937] transition-colors group-hover/faq:text-brand sm:text-[20px]">
                         {item.question}
                       </span>
                     </span>
                   </AccordionTrigger>
-                  <AccordionContent className="pb-7 text-[15px] leading-relaxed text-[#6B7280] sm:pb-8 sm:text-[16px]">
+                  <AccordionContent className="pb-7 text-[13px] leading-relaxed text-[#6B7280] sm:pb-8 sm:text-[14px]">
                     <p className="max-w-2xl pl-[2.75rem] sm:pl-[4.25rem]">
                       {item.answer}
                     </p>
@@ -208,12 +226,20 @@ export function ContactView() {
             <p className="text-[14px] text-[#6B7280]">
               Prefer to talk directly?
             </p>
-            <a
-              href={`mailto:${site.email}`}
-              className="text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
-            >
-              {site.email} →
-            </a>
+            <div className="flex flex-col gap-1 sm:items-end">
+              <a
+                href={`mailto:${site.email}`}
+                className="text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
+              >
+                {site.email} →
+              </a>
+              <a
+                href={`tel:${site.phone.replace(/\s/g, "")}`}
+                className="text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
+              >
+                {site.phone}
+              </a>
+            </div>
           </div>
         </div>
       </section>

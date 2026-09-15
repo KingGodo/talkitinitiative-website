@@ -18,7 +18,7 @@ export type Testimonial = {
 function TestimonialCard({ item }: { item: Testimonial }) {
   return (
     <figure className="rounded-[22px] border border-black/[0.06] bg-white px-6 py-7 shadow-[0_2px_12px_rgba(0,0,0,0.03)] sm:px-7 sm:py-8">
-      <blockquote className="text-[16px] leading-relaxed text-[#1F2937] sm:text-[17px]">
+      <blockquote className="text-[14px] leading-relaxed text-[#1F2937] sm:text-[14px]">
         “{item.quote}”
       </blockquote>
       <figcaption className="mt-7 flex items-center gap-3 border-t border-black/[0.06] pt-5">

@@ -7,10 +7,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 
-import { TestimonialsMarquee } from "@/components/home/testimonials-marquee";
+import { ImpactIndicators } from "@/components/impact/impact-indicators";
 import { Button } from "@/components/ui/button";
+import { sectionEyebrow, bodyMuted, displayHeading } from "@/lib/design";
 import { upcomingEvents } from "@/lib/events";
-import { impactMetrics } from "@/lib/impact";
 import { siteImages } from "@/lib/media";
 import { programs } from "@/lib/programs";
 import { cn } from "@/lib/utils";
@@ -48,65 +48,6 @@ function SectionPhoto({
   );
 }
 
-const testimonials = [
-  {
-    quote:
-      "Talk It Initiative gave me a space where I could finally speak about what I was carrying, and feel understood.",
-    name: "Chanda M.",
-    role: "Youth participant · Lusaka",
-    initials: "CM",
-  },
-  {
-    quote:
-      "The conversations are honest, practical, and full of hope. This is how leadership should be formed.",
-    name: "Thandiwe K.",
-    role: "Volunteer facilitator",
-    initials: "TK",
-  },
-  {
-    quote:
-      "Watching young people find their voice has been powerful. Talk It Initiative is building something lasting in our communities.",
-    name: "Joseph S.",
-    role: "Community partner",
-    initials: "JS",
-  },
-  {
-    quote:
-      "I joined thinking I would help others. I left with clearer purpose and friends who hold me accountable.",
-    name: "Mwansa B.",
-    role: "Volunteer · Central Province",
-    initials: "MB",
-  },
-  {
-    quote:
-      "As a parent, I finally saw my child open up. These spaces matter, and the facilitation is careful and respectful.",
-    name: "Grace N.",
-    role: "Parent supporter",
-    initials: "GN",
-  },
-  {
-    quote:
-      "Partnering with Talk It Initiative strengthened our outreach. Their dialogue-first approach meets young people where they are.",
-    name: "David L.",
-    role: "NGO programme lead",
-    initials: "DL",
-  },
-  {
-    quote:
-      "I used to stay quiet in rooms. Now I speak up, in class, at home, and for my peers.",
-    name: "Natasha P.",
-    role: "Campus circle member",
-    initials: "NP",
-  },
-  {
-    quote:
-      "Donating felt different here. You can see the care in every session, real young people, real change.",
-    name: "Kenneth R.",
-    role: "Monthly donor",
-    initials: "KR",
-  },
-];
-
 export function HomeSections() {
   const root = useRef<HTMLDivElement>(null);
 
@@ -139,18 +80,18 @@ export function HomeSections() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-black/10 to-transparent" />
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div className="mx-auto max-w-[920px] text-center" data-reveal>
-            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-black/[0.06] bg-[#FAFAFA] px-3.5 py-1.5">
+            <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-black/[0.06] bg-[#F8FAFB] px-3.5 py-1.5">
               <span className="size-1.5 rounded-full bg-brand" />
-              <p className="text-[12px] font-medium tracking-[0.02em] text-[#6B7280] sm:text-[13px]">
-                Founded 2024 · Youth-led · Zambia
+              <p className="text-[11px] font-medium tracking-[0.04em] text-[#6B7280] sm:text-[12px]">
+                Founded 2025 · Youth-led · Zambia
               </p>
             </div>
 
-            <h2 className="mx-auto mt-8 max-w-[18ch] text-[34px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:mt-10 sm:text-[48px] lg:text-[56px]">
+            <h2 className={cn("mx-auto mt-8 max-w-[18ch] sm:mt-10", displayHeading)}>
               From honest dialogue to confident leadership.
             </h2>
 
-            <p className="mx-auto mt-6 max-w-[36rem] text-[16px] leading-relaxed text-[#6B7280] sm:mt-7 sm:text-[19px]">
+            <p className={cn("mx-auto mt-5 max-w-[36rem] sm:mt-6", bodyMuted)}>
               Talk It Initiative is dialogue-first, turning conversation into
               personal growth, community care, and civic action across Zambia.
             </p>
@@ -235,13 +176,13 @@ export function HomeSections() {
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 xl:gap-20">
             <div data-reveal className="lg:sticky lg:top-28 lg:self-start">
-              <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
+              <p className={sectionEyebrow}>
                 Our work
               </p>
-              <h2 className="mt-4 max-w-[12ch] text-[36px] leading-[1.05] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[48px]">
+              <h2 className={cn("mt-4 max-w-[12ch]", displayHeading)}>
                 Where conversations become change.
               </h2>
-              <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
+              <p className={cn("mt-5 max-w-sm", bodyMuted)}>
                 Each program opens a structured space for young people to speak
                 with honesty, then leave with clarity, confidence, and a path
                 to lead.
@@ -260,29 +201,29 @@ export function HomeSections() {
 
               <Link
                 href="/programs"
-                className="mt-8 inline-flex text-[14px] font-semibold text-brand transition-opacity hover:opacity-70 lg:mt-10"
+                className="mt-8 inline-flex text-[13px] font-semibold text-brand transition-opacity hover:opacity-70 lg:mt-10"
               >
-                Explore programs →
+                Explore Our Work →
               </Link>
             </div>
 
             <div className="border-t border-black/[0.08]">
-              {programs.slice(0, 3).map((program, index) => (
+              {programs.map((program, index) => (
                 <article
                   key={program.title}
                   data-reveal
-                  className="group grid gap-4 border-b border-black/[0.08] py-9 sm:grid-cols-[4.5rem_1fr] sm:gap-8 sm:py-11"
+                  className="group grid gap-4 border-b border-black/[0.08] py-7 sm:grid-cols-[4.5rem_1fr] sm:gap-8 sm:py-8"
                 >
-                  <p className="font-mono text-[13px] tracking-[0.08em] text-brand/70">
+                  <p className="font-mono text-[12px] tracking-[0.08em] text-brand/70">
                     {String(index + 1).padStart(2, "0")}
                   </p>
                   <div>
                     <Link href={`/programs#${program.slug}`}>
-                      <h3 className="text-[26px] font-bold tracking-[-0.03em] text-[#1F2937] transition-colors group-hover:text-brand sm:text-[32px]">
+                      <h3 className="text-[18px] font-bold tracking-[-0.03em] text-[#1F2937] transition-colors group-hover:text-brand sm:text-[22px]">
                         {program.title}
                       </h3>
                     </Link>
-                    <p className="mt-3 max-w-md text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
+                    <p className="mt-2 max-w-md text-[13px] leading-relaxed text-[#6B7280]">
                       {program.summary}
                     </p>
                   </div>
@@ -293,53 +234,11 @@ export function HomeSections() {
         </div>
       </section>
 
-      {/* Impact, typographic, no photos */}
+      {/* Impact, typographic */}
       <section className="bg-white py-28 sm:py-36 lg:py-40">
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
-          <div
-            data-reveal
-            className="grid gap-10 border-b border-black/[0.08] pb-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:pb-16"
-          >
-            <h2 className="max-w-[10ch] text-[36px] leading-[1.05] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[48px] lg:text-[52px]">
-              Impact across Zambia
-            </h2>
-            <p className="max-w-md self-end text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-              Progress here is measured in courage spoken aloud, every dialogue
-              session, panel, and gathering is another young person heard.
-            </p>
-          </div>
-
-          <dl
-            data-reveal
-            className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-black/[0.08] lg:py-16"
-          >
-            {impactMetrics.map((item, index) => (
-              <div
-                key={item.label}
-                className={cn(
-                  "lg:px-6",
-                  index === 0 && "lg:pl-0",
-                  index === impactMetrics.length - 1 && "lg:pr-0"
-                )}
-              >
-                <dt className="text-[36px] font-bold tracking-[-0.045em] text-brand sm:text-[40px] lg:text-[44px]">
-                  {item.value}
-                </dt>
-                <dd className="mt-4 text-[14px] font-semibold tracking-[-0.01em] text-[#1F2937]">
-                  {item.label}
-                </dd>
-                <p className="mt-2 text-[14px] text-[#6B7280]">{item.detail}</p>
-              </div>
-            ))}
-          </dl>
-
-          <div data-reveal className="border-t border-black/[0.08] pt-8">
-            <Link
-              href="/impact"
-              className="inline-flex text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
-            >
-              Read impact stories →
-            </Link>
+          <div data-reveal>
+            <ImpactIndicators variant="home" />
           </div>
         </div>
       </section>
@@ -352,86 +251,65 @@ export function HomeSections() {
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 Calendar
               </p>
-              <h2 className="mt-3 text-[34px] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[48px]">
-                Upcoming gatherings
+              <h2 className="mt-3 text-[24px] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+                Upcoming Events
               </h2>
             </div>
             <Link
               href="/events"
-              className="text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
+              className="text-[13px] font-semibold text-brand transition-opacity hover:opacity-70"
             >
               View all →
             </Link>
           </div>
 
-          <ul className="mt-12 space-y-4 sm:mt-14">
-            {upcomingEvents.map((event) => (
-              <li
-                key={event.slug}
-                data-reveal
-                className="grid items-center gap-4 rounded-[22px] border border-black/[0.05] bg-white p-3 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:p-4"
-              >
-                <SectionPhoto
-                  src={event.image}
-                  className="aspect-[5/4] w-full sm:aspect-square sm:h-[7.5rem] sm:w-[7.5rem]"
-                  position={event.position}
-                />
-                <div className="flex flex-col gap-1 px-1 pb-2 sm:flex-row sm:items-baseline sm:gap-10 sm:px-2 sm:pb-0">
-                  <time
-                    dateTime={event.dateISO}
-                    className="shrink-0 text-[14px] font-semibold text-brand"
-                  >
-                    {event.dateLabel.replace(/ 20\d{2}$/, "")}
-                  </time>
-                  <div>
-                    <Link href={`/events#${event.slug}`}>
-                      <p className="text-[18px] font-semibold tracking-[-0.015em] text-[#1F2937] transition-colors hover:text-brand">
-                        {event.title}
-                      </p>
-                    </Link>
-                    <p className="mt-1 text-[14px] text-[#6B7280]">
-                      {event.place}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Testimonials, vertical auto-scroll social proof */}
-      <section className="bg-white py-28 sm:py-36 lg:py-40">
-        <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
-          <div data-reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-2xl">
-              <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
-                In their words
-              </p>
-              <h2 className="mt-4 text-[34px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[48px]">
-                People who joined Talk It Initiative.
-              </h2>
-              <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-[#6B7280] sm:text-[17px]">
-                From first-time participants to volunteers, partners, and donors,
-                these voices show what becomes possible when you step into the
-                circle.
-              </p>
-            </div>
-            <Link
-              href="/get-involved"
-              className="shrink-0 text-[14px] font-semibold text-brand transition-opacity hover:opacity-70"
+          {upcomingEvents.length === 0 ? (
+            <p
+              data-reveal
+              className="mt-12 max-w-lg text-[13px] leading-relaxed text-[#6B7280] sm:mt-14"
             >
-              Join them →
-            </Link>
-          </div>
-
-          <div>
-            <TestimonialsMarquee items={testimonials} />
-          </div>
+              No upcoming events are scheduled yet. Past gatherings are available
+              in the events archive.
+            </p>
+          ) : (
+            <ul className="mt-12 space-y-4 sm:mt-14">
+              {upcomingEvents.map((event) => (
+                <li
+                  key={event.slug}
+                  data-reveal
+                  className="grid items-center gap-4 rounded-[22px] border border-black/[0.05] bg-white p-3 sm:grid-cols-[7.5rem_1fr] sm:gap-6 sm:p-4"
+                >
+                  <SectionPhoto
+                    src={event.image}
+                    className="aspect-[5/4] w-full sm:aspect-square sm:h-[7.5rem] sm:w-[7.5rem]"
+                    position={event.position}
+                  />
+                  <div className="flex flex-col gap-1 px-1 pb-2 sm:flex-row sm:items-baseline sm:gap-10 sm:px-2 sm:pb-0">
+                    <time
+                      dateTime={event.dateISO}
+                      className="shrink-0 text-[14px] font-semibold text-brand"
+                    >
+                      {event.dateLabel.replace(/ 20\d{2}$/, "")}
+                    </time>
+                    <div>
+                      <Link href={`/events#${event.slug}`}>
+                        <p className="text-[18px] font-semibold tracking-[-0.015em] text-[#1F2937] transition-colors hover:text-brand">
+                          {event.title}
+                        </p>
+                      </Link>
+                      <p className="mt-1 text-[14px] text-[#6B7280]">
+                        {event.place}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 
-      {/* Closing CTA, one clear composition */}
+      {/* Closing CTA */}
       <section className="relative isolate overflow-hidden bg-[#043a57]">
         <Image
           src={siteImages.homeCta}
@@ -447,36 +325,54 @@ export function HomeSections() {
         />
 
         <div
-          className="relative mx-auto flex min-h-[min(78vh,720px)] max-w-[1120px] flex-col justify-end px-5 py-24 sm:px-8 sm:py-28 lg:py-32"
+          className="relative mx-auto flex min-h-[min(72vh,640px)] max-w-[1120px] flex-col justify-end px-5 py-24 sm:px-8 sm:py-28 lg:py-32"
           data-reveal
         >
           <div className="max-w-2xl">
-            <p className="text-[13px] font-semibold tracking-[0.14em] text-white/60 uppercase">
-              Talk It Initiative
+            <p className="text-[12px] font-semibold tracking-[0.14em] text-white/60 uppercase">
+              Get involved
             </p>
-            <h2 className="mt-5 text-[40px] leading-[1.02] font-bold tracking-[-0.04em] text-white sm:text-[56px] lg:text-[64px]">
-              Your voice belongs here.
+            <h2 className="mt-5 text-[24px] leading-[1.02] font-bold tracking-[-0.04em] text-white sm:text-[36px] lg:text-[40px]">
+              Be part of the change.
             </h2>
-            <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-white/75 sm:text-[18px]">
-              Join the circle, volunteer, partner, or give, and help create
-              safer spaces where young people in Zambia can speak and lead.
+            <p className="mt-5 max-w-[32rem] text-[13px] leading-relaxed text-white/75 sm:text-[14px]">
+              Whether you are a young person looking to participate, a volunteer
+              ready to serve, an organisation interested in partnership, or a
+              supporter who wants to contribute, there is a place for you at
+              Talk It Initiative.
             </p>
 
-            <div className="mt-10 flex flex-col gap-3 sm:mt-12 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col gap-2.5 sm:mt-12 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
               <Button
                 nativeButton={false}
-                render={<Link href="/get-involved" />}
-                className="h-12 rounded-full bg-white px-8 text-[15px] font-semibold text-brand hover:bg-white/92"
+                render={<Link href="/membership" />}
+                className="h-11 rounded-full bg-white px-6 text-[13px] font-semibold text-brand hover:bg-white/92"
               >
-                Join the circle
+                Become a Member
+              </Button>
+              <Button
+                nativeButton={false}
+                render={<Link href="/get-involved#volunteer" />}
+                variant="outline"
+                className="h-11 rounded-full border-white/30 bg-transparent px-6 text-[13px] font-medium text-white hover:bg-white/10 hover:text-white"
+              >
+                Volunteer
+              </Button>
+              <Button
+                nativeButton={false}
+                render={<Link href="/partners" />}
+                variant="outline"
+                className="h-11 rounded-full border-white/30 bg-transparent px-6 text-[13px] font-medium text-white hover:bg-white/10 hover:text-white"
+              >
+                Partner With Us
               </Button>
               <Button
                 nativeButton={false}
                 render={<Link href="/get-involved#donate" />}
                 variant="outline"
-                className="h-12 rounded-full border-white/30 bg-transparent px-8 text-[15px] font-medium text-white hover:bg-white/10 hover:text-white"
+                className="h-11 rounded-full border-white/30 bg-transparent px-6 text-[13px] font-medium text-white hover:bg-white/10 hover:text-white"
               >
-                Give today
+                Support Our Work
               </Button>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { SiteLogo } from "@/components/layout/site-logo";
-import { footerNav, site } from "@/lib/navigation";
+import { footerNav, site, socialLinks } from "@/lib/navigation";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -16,7 +16,7 @@ export function SiteFooter() {
             <p className="mt-5 text-[14px] leading-relaxed text-[#6B7280]">
               {site.description}
             </p>
-            <p className="mt-5 text-[15px] font-semibold tracking-[-0.015em] text-[#1F2937]">
+            <p className="mt-5 text-[13px] font-semibold tracking-[-0.015em] text-[#1F2937]">
               {site.tagline}
             </p>
             <a
@@ -25,6 +25,26 @@ export function SiteFooter() {
             >
               {site.email}
             </a>
+            <a
+              href={`tel:${site.phone.replace(/\s/g, "")}`}
+              className="mt-1.5 block text-[14px] text-brand transition-opacity hover:opacity-75"
+            >
+              {site.phone}
+            </a>
+            {socialLinks.length > 0 ? (
+              <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
+                {socialLinks.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="text-[13px] font-medium text-[#6B7280] transition-colors hover:text-brand"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
 
           {/* Links */}
@@ -85,9 +105,7 @@ export function SiteFooter() {
           <p className="text-[13px] text-[#9CA3AF]">
             © {year} Talk It Initiative. All rights reserved.
           </p>
-          <p className="text-[13px] text-[#9CA3AF]">
-            Building leaders through conversation.
-          </p>
+          <p className="text-[13px] text-[#9CA3AF]">{site.tagline}</p>
         </div>
       </div>
     </footer>

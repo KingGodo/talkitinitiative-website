@@ -50,12 +50,13 @@ export function PartnersView() {
             <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
               Partners
             </p>
-            <h1 className="mt-4 text-[44px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[60px] lg:text-[68px]">
+            <h1 className="mt-4 text-[24px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Build the room with us
             </h1>
-            <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-              Schools, campuses, NGOs, and community hubs help Talk It Initiative
-              open safer spaces for young people across Zambia.
+            <p className="mt-6 max-w-[32rem] text-[14px] leading-relaxed text-[#6B7280] sm:text-[14px]">
+              Schools, campuses, NGOs, public institutions, corporate partners
+              and community hubs can collaborate on programmes aligned with our
+              Constitution and values.
             </p>
           </div>
         </div>
@@ -65,17 +66,17 @@ export function PartnersView() {
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <h2
             data-reveal
-            className="text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]"
+            className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]"
           >
             Who we partner with
           </h2>
-          <div className="mt-10 grid gap-8 border-t border-black/[0.08] pt-10 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <div className="mt-10 grid gap-8 border-t border-black/[0.08] pt-10 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {partnerTypes.map((item, index) => (
               <div key={item.title} data-reveal>
                 <p className="font-mono text-[12px] tracking-[0.08em] text-brand/70">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-3 text-[17px] font-semibold tracking-[-0.02em] text-[#1F2937]">
+                <h3 className="mt-3 text-[14px] font-semibold tracking-[-0.02em] text-[#1F2937]">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280]">
@@ -93,13 +94,12 @@ export function PartnersView() {
             data-reveal
             className="grid gap-6 border-b border-black/[0.08] pb-10 sm:grid-cols-[1fr_1.1fr] sm:items-end"
           >
-            <h2 className="text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
-              Current collaborators
+            <h2 className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+              Partner listings
             </h2>
-            <p className="max-w-md text-[15px] leading-relaxed text-[#6B7280]">
-              Named logos appear here once partners approve a public listing.
-              Until then, these are the kinds of relationships already carrying
-              the work.
+            <p className="max-w-md text-[13px] leading-relaxed text-[#6B7280]">
+              Named logos and profiles appear here only with mutual agreement.
+              Until then, this remains an open invitation to collaborate.
             </p>
           </div>
 
@@ -114,10 +114,10 @@ export function PartnersView() {
                   {partner.type}
                 </p>
                 <div>
-                  <h3 className="text-[18px] font-semibold tracking-[-0.02em] text-[#1F2937]">
+                  <h3 className="text-[14px] font-semibold tracking-[-0.02em] text-[#1F2937]">
                     {partner.name}
                   </h3>
-                  <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-[#6B7280] sm:text-[15px]">
+                  <p className="mt-2 max-w-xl text-[14px] leading-relaxed text-[#6B7280] sm:text-[13px]">
                     {partner.summary}
                   </p>
                 </div>
@@ -139,7 +139,7 @@ export function PartnersView() {
         <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
           <h2
             data-reveal
-            className="text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]"
+            className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]"
           >
             How we work together
           </h2>
@@ -148,7 +148,7 @@ export function PartnersView() {
               <li
                 key={principle}
                 data-reveal
-                className="text-[15px] leading-relaxed text-[#4B5563] sm:text-[16px]"
+                className="text-[13px] leading-relaxed text-[#4B5563] sm:text-[14px]"
               >
                 {principle}
               </li>
@@ -173,10 +173,10 @@ export function PartnersView() {
             <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
               Partnership enquiry
             </p>
-            <h2 className="mt-3 text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+            <h2 className="mt-3 text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Start a conversation
             </h2>
-            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-[#6B7280]">
+            <p className="mt-5 max-w-md text-[13px] leading-relaxed text-[#6B7280]">
               Tell us who you are, where you work, and how you’d like to host or
               co-design with Talk It Initiative.
             </p>

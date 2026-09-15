@@ -51,10 +51,10 @@ export function ProjectsView() {
             <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
               Projects
             </p>
-            <h1 className="mt-4 text-[44px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[60px] lg:text-[68px]">
+            <h1 className="mt-4 text-[24px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Work on the ground
             </h1>
-            <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
+            <p className="mt-6 max-w-[32rem] text-[14px] leading-relaxed text-[#6B7280] sm:text-[14px]">
               Active, completed, and upcoming initiatives that turn dialogue
               into lasting practice across Zambia.
             </p>
@@ -90,7 +90,7 @@ export function ProjectsView() {
             <div className="mx-auto max-w-[1120px] px-5 sm:px-8">
               <h2
                 data-reveal
-                className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[30px]"
+                className="text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]"
               >
                 {statusLabel[status]}
               </h2>
@@ -114,13 +114,13 @@ export function ProjectsView() {
                         <span className="text-[#D1D5DB]">·</span>
                         <span className="text-[#6B7280]">{project.place}</span>
                       </div>
-                      <h3 className="mt-2 text-[22px] font-bold tracking-[-0.025em] text-[#1F2937] sm:text-[26px]">
+                      <h3 className="mt-2 text-[18px] font-bold tracking-[-0.025em] text-[#1F2937] sm:text-[22px]">
                         {project.title}
                       </h3>
                       <p className="mt-1 text-[12px] font-semibold tracking-[0.04em] text-brand uppercase">
                         {project.program}
                       </p>
-                      <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-[#6B7280]">
+                      <p className="mt-4 max-w-xl text-[13px] leading-relaxed text-[#6B7280]">
                         {project.summary}
                       </p>
                       <ul className="mt-5 space-y-2">
@@ -165,17 +165,17 @@ export function ProjectsView() {
           className="mx-auto max-w-[720px] px-5 text-center sm:px-8"
           data-reveal
         >
-          <h2 className="text-[32px] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[40px]">
+          <h2 className="text-[24px] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
             Bring a project to your community
           </h2>
-          <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
+          <p className="mx-auto mt-5 max-w-md text-[14px] leading-relaxed text-[#6B7280]">
             Host a circle, co-design outreach, or support provincial expansion.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
               nativeButton={false}
               render={<Link href="/partners#enquire" />}
-              className="h-12 rounded-full bg-brand px-7 text-[15px] font-semibold text-white hover:bg-brand/90"
+              className="h-12 rounded-full bg-brand px-7 text-[13px] font-semibold text-white hover:bg-brand/90"
             >
               Partner with us
             </Button>
@@ -183,7 +183,7 @@ export function ProjectsView() {
               nativeButton={false}
               render={<Link href="/impact" />}
               variant="outline"
-              className="h-12 rounded-full border-black/10 bg-white px-7 text-[15px] font-medium text-[#1F2937]"
+              className="h-12 rounded-full border-black/10 bg-white px-7 text-[13px] font-medium text-[#1F2937]"
             >
               See impact
             </Button>

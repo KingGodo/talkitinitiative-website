@@ -54,8 +54,9 @@
 }
 
 /*
-  Surface: white
-  Brand primary: #065782
+  Design direction: Trust & Authority (cool neutrals + brand navy)
+  Depth: borders + surface shifts · Body: 13/14px · Display: 24/36/40
+  Surface: white · Brand primary: #065782
 */
 :root {
   --background: #ffffff;
@@ -101,7 +102,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-[13px] leading-relaxed text-foreground sm:text-[14px];
   }
   html {
     @apply font-sans scroll-smooth;

@@ -1,15 +1,31 @@
 export const involvementPaths = [
   {
+    id: "membership",
+    title: "Membership",
+    eyebrow: "Join the movement",
+    summary:
+      "Become a member of Talk It Initiative if you are a Zambian aged 16 to 35 who supports our mission, vision and values.",
+    commit: "Youth-led · Non-partisan · Constitution-aligned",
+    actions: [
+      "Apply through the official membership pathway",
+      "Take part in programmes, dialogues and community action",
+      "Help shape a youth-led organisation committed to accountability",
+    ],
+    cta: "Apply for membership",
+    href: "/membership",
+    mailSubject: "Membership interest, Talk It Initiative",
+  },
+  {
     id: "volunteer",
     title: "Volunteer",
-    eyebrow: "Show up in the room",
+    eyebrow: "Contribute your skills",
     summary:
-      "Facilitate circles, support events, and help young people feel heard, with training and care around you.",
-    commit: "Flexible hours · Facilitator training provided",
+      "Support Talk It Initiative across programmes, communications, research, advocacy, events, community outreach, digital media and facilitation.",
+    commit: "Flexible roles · Orientation provided",
     actions: [
-      "Hold space in dialogue circles and Talk It Tuesdays",
-      "Support campus and community gatherings",
-      "Grow into peer facilitation with mentorship",
+      "Programmes and facilitation support",
+      "Communications, digital media and storytelling",
+      "Research, advocacy, events and community outreach",
     ],
     cta: "Volunteer with us",
     mailSubject: "Volunteer interest, Talk It Initiative",
@@ -17,32 +33,32 @@ export const involvementPaths = [
   {
     id: "partner",
     title: "Partner",
-    eyebrow: "Bring the circle further",
+    eyebrow: "Work with us",
     summary:
-      "Schools, NGOs, campuses, and community hubs can host Talk It Initiative dialogues and shared programmes.",
-    commit: "Programme partnerships · Co-hosted events",
+      "Schools, campuses, NGOs, public institutions and corporate partners can collaborate on programmes aligned with our Constitution and values.",
+    commit: "Programme partnerships · Co-hosted activities",
     actions: [
-      "Host a circle or panel in your space",
-      "Co-design outreach with our facilitators",
-      "Strengthen youth mental health and leadership together",
+      "Host or co-design dialogues, training and civic education",
+      "Align with youth empowerment, civic participation and community transformation",
+      "Build partnerships that keep young people at the centre",
     ],
     cta: "Explore partnership",
     mailSubject: "Partnership inquiry, Talk It Initiative",
   },
   {
     id: "donate",
-    title: "Donate",
-    eyebrow: "Fuel safer spaces",
+    title: "Support Our Work",
+    eyebrow: "Resource the mission",
     summary:
-      "Your gift keeps rooms open, facilitation, materials, and reach for young people across Zambia.",
-    commit: "One-time or ongoing support",
+      "Support programmes through bank transfer, sponsorships, grants and in-kind contributions using the organisation's official Absa account details.",
+    commit: "Board-approved channels only",
     actions: [
-      "Underwrite dialogue sessions and peer training",
-      "Help expand provincial circles",
-      "Support safeguarding and facilitator care",
+      "Support youth programmes, civic education and community engagement",
+      "Sponsor dialogues, training, research or educational content",
+      "Offer in-kind support such as venues, materials or mentorship",
     ],
-    cta: "Start a gift enquiry",
-    mailSubject: "Donation interest, Talk It Initiative",
+    cta: "Enquire about support",
+    mailSubject: "Support interest, Talk It Initiative",
   },
 ] as const;
 
@@ -50,11 +66,11 @@ export const involvementExtras = [
   {
     id: "campaign",
     title: "Join a campaign",
-    body: "Amplify awareness moments, stigma out, dialogue in, across campuses and communities.",
+    body: "Amplify awareness and advocacy moments across campuses and communities, always aligned with our non-partisan mandate.",
   },
   {
     id: "internship",
     title: "Internships",
-    body: "Hands-on experience in youth dialogue, programme support, and community engagement when roles open.",
+    body: "Hands-on experience in programmes, communications, research, advocacy and community engagement when roles open.",
   },
 ] as const;

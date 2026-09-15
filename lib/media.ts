@@ -76,8 +76,8 @@ export const mediaStories = [
     dateLabel: "2026",
     type: "Story",
     summary:
-      "What began as a quiet Tuesday gathering became a recurring room where students named stress, stigma, and hope.",
-    href: "/impact#stories",
+      "Approved programme stories will appear here once consent and editorial review are complete.",
+    href: "/youth-voices",
   },
   {
     slug: "volunteer-to-facilitator",
@@ -85,8 +85,8 @@ export const mediaStories = [
     dateLabel: "2026",
     type: "Story",
     summary:
-      "A volunteer joined to help set up chairs. Months later they were guiding dialogue with care and confidence.",
-    href: "/impact#stories",
+      "Volunteer journeys will be published when participants approve public sharing.",
+    href: "/get-involved#volunteer",
   },
   {
     slug: "partner-extends-room",
@@ -94,12 +94,12 @@ export const mediaStories = [
     dateLabel: "2026",
     type: "Story",
     summary:
-      "Working with a local organisation, dialogue reached a neighbourhood that had never hosted a structured youth circle.",
-    href: "/impact#stories",
+      "Named partnership stories will appear once memoranda and public listings are confirmed.",
+    href: "/partners",
   },
 ] as const;
 
-export const pressBoilerplate = `Talk It Initiative is a youth-led nonprofit in Zambia creating safe spaces for honest conversation. Through dialogue-centred programmes in mental health advocacy, leadership development, youth empowerment, and community engagement, the Initiative helps young people speak, listen, and lead with care. Founded in 2024. Contact: talkitzambia50@gmail.com.`;
+export const pressBoilerplate = `Talk It Initiative is a non-profit-making, non-partisan and youth-led organisation advancing youth empowerment, civic participation and community transformation in Zambia. Through dialogue, civic education, leadership, advocacy, research, educational content, innovation and community engagement, the Initiative helps young people speak out, participate and take action. Motto: Your Voice, Our Future. Founded 17 February 2025. Contact: talkitzambia50@gmail.com.`;
 
 export const mediaKitItems = [
   {

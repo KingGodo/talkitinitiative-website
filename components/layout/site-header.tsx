@@ -60,10 +60,10 @@ export function SiteHeader() {
         <div className="ml-auto flex shrink-0 items-center gap-2 lg:ml-0">
           <Button
             nativeButton={false}
-            render={<Link href="/get-involved#donate" />}
+            render={<Link href="/membership" />}
             className="hidden h-9 rounded-full bg-brand px-4 text-[12px] font-semibold whitespace-nowrap text-white hover:bg-brand/90 lg:inline-flex xl:h-10 xl:px-5 xl:text-[13px]"
           >
-            Donate
+            Become a Member
           </Button>
 
           <div className="lg:hidden">
@@ -95,7 +95,7 @@ export function SiteHeader() {
                         onClick={() => setOpen(false)}
                         aria-current={active ? "page" : undefined}
                         className={cn(
-                          "rounded-lg px-3 py-3 text-[15px] font-medium transition-colors",
+                          "rounded-lg px-3 py-3 text-[13px] font-medium transition-colors",
                           active
                             ? "bg-[#065782]/10 font-semibold text-[#065782]"
                             : "text-[#1F2937] hover:bg-[#065782]/06"
@@ -109,13 +109,13 @@ export function SiteHeader() {
                     nativeButton={false}
                     render={
                       <Link
-                        href="/get-involved#donate"
+                        href="/membership"
                         onClick={() => setOpen(false)}
                       />
                     }
                     className="mt-3 h-11 w-full rounded-full bg-brand text-[14px] font-semibold text-white hover:bg-brand/90"
                   >
-                    Donate
+                    Become a Member
                   </Button>
                 </nav>
               </SheetContent>

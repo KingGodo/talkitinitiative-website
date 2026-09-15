@@ -33,10 +33,10 @@ export default async function LegalDocPage({ params }: Props) {
         <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
           Legal
         </p>
-        <h1 className="mt-4 text-[40px] leading-[1.02] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[52px]">
+        <h1 className="mt-4 text-[24px] leading-[1.02] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
           {doc.title}
         </h1>
-        <p className="mt-5 text-[16px] leading-relaxed text-[#6B7280]">
+        <p className="mt-5 text-[14px] leading-relaxed text-[#6B7280]">
           {doc.description}
         </p>
         <p className="mt-4 text-[13px] text-[#9CA3AF]">
@@ -46,14 +46,14 @@ export default async function LegalDocPage({ params }: Props) {
         <div className="mt-12 space-y-10 border-t border-black/[0.08] pt-10">
           {doc.sections.map((section) => (
             <section key={section.heading}>
-              <h2 className="text-[20px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[22px]">
+              <h2 className="text-[20px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[17px]">
                 {section.heading}
               </h2>
               <div className="mt-4 space-y-3">
                 {section.body.map((para) => (
                   <p
                     key={para.slice(0, 48)}
-                    className="text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]"
+                    className="text-[13px] leading-relaxed text-[#6B7280] sm:text-[14px]"
                   >
                     {para}
                   </p>

@@ -5,7 +5,7 @@ import { ContactView } from "@/components/contact/contact-view";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Talk It Initiative, enquire about volunteering, partnerships, donations, events, or media in Zambia.",
+    "Contact Talk It Initiative about membership, volunteering, partnerships, programmes, research, media or safeguarding in Zambia.",
 };
 
 export default function ContactPage() {

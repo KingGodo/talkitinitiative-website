@@ -5,7 +5,7 @@ import { TransparencyView } from "@/components/transparency/transparency-view";
 export const metadata: Metadata = {
   title: "Transparency",
   description:
-    "How Talk It Initiative uses donations, publishes policies, and grows governance and reporting accountability.",
+    "Accountability centre for Talk It Initiative, Constitution, governance, reports, policies and how support is used.",
 };
 
 export default function TransparencyPage() {

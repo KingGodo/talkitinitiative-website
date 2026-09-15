@@ -106,7 +106,7 @@ export function InterestForm({
             required
             autoComplete="name"
             placeholder="Your name"
-            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[15px]"
+            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[13px]"
           />
         </div>
         <div className="space-y-2">
@@ -120,7 +120,7 @@ export function InterestForm({
             required
             autoComplete="email"
             placeholder="you@example.com"
-            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[15px]"
+            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[13px]"
           />
         </div>
       </div>
@@ -135,7 +135,7 @@ export function InterestForm({
             name="organisation"
             autoComplete="organization"
             placeholder="School, NGO, hub…"
-            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[15px]"
+            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[13px]"
           />
         </div>
       ) : null}
@@ -150,7 +150,7 @@ export function InterestForm({
             name="topic"
             required
             defaultValue={topicDefault || topics[0]}
-            className="flex h-11 w-full rounded-xl border border-black/10 bg-white px-3.5 text-[15px] text-[#1F2937] outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+            className="flex h-11 w-full rounded-xl border border-black/10 bg-white px-3.5 text-[13px] text-[#1F2937] outline-none transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
           >
             {topics.map((topic) => (
               <option key={topic} value={topic}>
@@ -170,7 +170,7 @@ export function InterestForm({
             id={`${type}-amount`}
             name="amountHint"
             placeholder="One-time, monthly, or approximate amount"
-            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[15px]"
+            className="h-11 rounded-xl border-black/10 bg-white px-3.5 text-[13px]"
           />
         </div>
       ) : null}
@@ -186,7 +186,7 @@ export function InterestForm({
             required={type === "contact" || type === "media"}
             rows={compact ? 3 : 5}
             placeholder={messagePlaceholder}
-            className="min-h-[100px] rounded-xl border-black/10 bg-white px-3.5 py-3 text-[15px]"
+            className="min-h-[100px] rounded-xl border-black/10 bg-white px-3.5 py-3 text-[13px]"
           />
         </div>
       ) : (

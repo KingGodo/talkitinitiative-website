@@ -80,12 +80,14 @@ export function ProgramsView() {
               <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
                 Talk It Initiative
               </p>
-              <h1 className="mt-4 max-w-[10ch] text-[44px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[60px] lg:text-[68px]">
-                Programs
+              <h1 className="mt-4 max-w-[14ch] text-[24px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+                Our Work
               </h1>
-              <p className="mt-6 max-w-[30rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
-                Structured spaces where young people speak with honesty, then
-                leave with clarity, confidence, and a path to lead.
+              <p className="mt-6 max-w-[32rem] text-[14px] leading-relaxed text-[#6B7280] sm:text-[14px]">
+                Where conversations become knowledge, participation and action.
+                Seven programme areas spanning leadership, civic education,
+                empowerment, research, community engagement, storytelling and
+                mental health & wellbeing.
               </p>
             </div>
 
@@ -126,7 +128,7 @@ export function ProgramsView() {
             data-reveal
             className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16"
           >
-            <h2 className="max-w-[12ch] text-[28px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+            <h2 className="max-w-[12ch] text-[24px] leading-[1.1] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               How our programs work
             </h2>
             <div className="grid gap-8 sm:grid-cols-3 sm:gap-6">
@@ -145,7 +147,7 @@ export function ProgramsView() {
                 },
               ].map((item) => (
                 <div key={item.title}>
-                  <p className="text-[15px] font-semibold text-[#1F2937]">
+                  <p className="text-[13px] font-semibold text-[#1F2937]">
                     {item.title}
                   </p>
                   <p className="mt-2 text-[14px] leading-relaxed text-[#6B7280]">
@@ -181,13 +183,13 @@ export function ProgramsView() {
                     <p className="font-mono text-[13px] tracking-[0.08em] text-brand/70">
                       {String(index + 1).padStart(2, "0")}
                     </p>
-                    <h2 className="mt-3 text-[32px] leading-[1.05] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[42px]">
+                    <h2 className="mt-3 text-[24px] leading-[1.05] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
                       {program.title}
                     </h2>
                     <p className="mt-2 text-[13px] font-semibold tracking-[0.04em] text-brand uppercase">
                       {program.focus}
                     </p>
-                    <p className="mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
+                    <p className="mt-5 max-w-md text-[14px] leading-relaxed text-[#6B7280]">
                       {program.summary}
                     </p>
                   </div>
@@ -240,10 +242,10 @@ export function ProgramsView() {
           className="mx-auto max-w-[720px] px-5 text-center sm:px-8"
           data-reveal
         >
-          <h2 className="text-[32px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[40px]">
+          <h2 className="text-[24px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
             Ready to step into a program?
           </h2>
-          <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
+          <p className="mx-auto mt-5 max-w-md text-[14px] leading-relaxed text-[#6B7280]">
             Volunteer, join a circle, or partner with Talk It Initiative, every
             new voice strengthens the work.
           </p>
@@ -251,7 +253,7 @@ export function ProgramsView() {
             <Button
               nativeButton={false}
               render={<Link href="/get-involved" />}
-              className="h-12 rounded-full bg-brand px-7 text-[15px] font-semibold text-white hover:bg-brand/90"
+              className="h-12 rounded-full bg-brand px-7 text-[13px] font-semibold text-white hover:bg-brand/90"
             >
               Get Involved
             </Button>
@@ -259,7 +261,7 @@ export function ProgramsView() {
               nativeButton={false}
               render={<Link href="/contact" />}
               variant="outline"
-              className="h-12 rounded-full border-black/10 bg-white px-7 text-[15px] font-medium text-[#1F2937] hover:bg-white hover:text-[#1F2937]"
+              className="h-12 rounded-full border-black/10 bg-white px-7 text-[13px] font-medium text-[#1F2937] hover:bg-white hover:text-[#1F2937]"
             >
               Contact us
             </Button>

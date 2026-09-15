@@ -78,13 +78,13 @@ function EventRow({
               <span className="text-[#D1D5DB]">·</span>
               <span className="text-[#6B7280]">{event.place}</span>
             </div>
-            <h3 className="mt-3 text-[28px] leading-[1.08] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+            <h3 className="mt-3 text-[24px] leading-[1.08] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               {event.title}
             </h3>
             <p className="mt-2 text-[13px] font-semibold tracking-[0.04em] text-brand uppercase">
               {event.program}
             </p>
-            <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[#6B7280] sm:text-[16px]">
+            <p className="mt-5 max-w-lg text-[13px] leading-relaxed text-[#6B7280] sm:text-[14px]">
               {event.summary}
             </p>
             <div className="mt-8 rounded-[20px] border border-black/[0.08] bg-[#FAFAFA] p-5 sm:p-6">
@@ -132,7 +132,7 @@ function EventRow({
                 <span className="hidden text-[#D1D5DB] sm:inline">·</span>
                 <span className="text-[#6B7280]">{event.place}</span>
               </div>
-              <h3 className="mt-1.5 text-[18px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[20px]">
+              <h3 className="mt-1.5 text-[14px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[20px]">
                 {event.title}
               </h3>
               <p className="mt-1 text-[13px] text-[#9CA3AF]">{event.program}</p>
@@ -208,10 +208,10 @@ export function EventsView() {
             <p className="text-[13px] font-semibold tracking-[0.1em] text-brand uppercase">
               Talk It Initiative
             </p>
-            <h1 className="mt-4 text-[44px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[60px] lg:text-[68px]">
+            <h1 className="mt-4 text-[24px] leading-[0.98] font-bold tracking-[-0.04em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
               Events
             </h1>
-            <p className="mt-6 max-w-[32rem] text-[16px] leading-relaxed text-[#6B7280] sm:text-[18px]">
+            <p className="mt-6 max-w-[32rem] text-[14px] leading-relaxed text-[#6B7280] sm:text-[14px]">
               Circles, panels, and gatherings where young people practise honest
               conversation, online and across communities in Zambia.
             </p>
@@ -249,22 +249,58 @@ export function EventsView() {
               <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
                 Calendar
               </p>
-              <h2 className="mt-2 text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
+              <h2 className="mt-2 text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
                 Upcoming gatherings
               </h2>
             </div>
             <p className="hidden max-w-[16rem] text-right text-[13px] leading-relaxed text-[#6B7280] sm:block">
-              Register interest below, we’ll share joining details by email.
+              {featured
+                ? "Register interest below, we’ll share joining details by email."
+                : "New dates will appear here when confirmed."}
             </p>
           </div>
 
-          {featured ? <EventRow event={featured} featured /> : null}
-
-          <div className="border-t border-black/[0.08]">
-            {restUpcoming.map((event) => (
-              <EventRow key={event.slug} event={event} />
-            ))}
-          </div>
+          {featured ? (
+            <>
+              <EventRow event={featured} featured />
+              <div className="border-t border-black/[0.08]">
+                {restUpcoming.map((event) => (
+                  <EventRow key={event.slug} event={event} />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div
+              data-reveal
+              className="border-t border-black/[0.08] py-14 text-center sm:py-16"
+            >
+              <p className="text-[14px] font-semibold tracking-[-0.02em] text-[#1F2937] sm:text-[14px]">
+                No upcoming events listed yet
+              </p>
+              <p className="mx-auto mt-3 max-w-md text-[14px] leading-relaxed text-[#6B7280] sm:text-[13px]">
+                New gatherings will appear here when dates are confirmed. Browse
+                the past events archive below, or contact us about hosting a
+                session.
+              </p>
+              <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button
+                  nativeButton={false}
+                  render={<Link href="#past" />}
+                  variant="outline"
+                  className="h-11 rounded-full border-black/10 bg-white px-6 text-[14px] font-medium"
+                >
+                  View past events
+                </Button>
+                <Button
+                  nativeButton={false}
+                  render={<Link href="/contact" />}
+                  className="h-11 rounded-full bg-brand px-6 text-[14px] font-semibold text-white hover:bg-brand/90"
+                >
+                  Ask about hosting
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -278,15 +314,24 @@ export function EventsView() {
             <p className="text-[13px] font-semibold tracking-[0.08em] text-brand uppercase">
               Archive
             </p>
-            <h2 className="mt-2 text-[28px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px]">
-              Past events
+            <h2 className="mt-2 text-[24px] font-bold tracking-[-0.03em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
+              Past events archive
             </h2>
+            <p className="mt-3 max-w-lg text-[14px] leading-relaxed text-[#6B7280]">
+              A record of previous dialogues, panels and gatherings.
+            </p>
           </div>
 
           <div className="mt-8 border-t border-black/[0.08] bg-transparent">
-            {pastEvents.map((event) => (
-              <EventRow key={event.slug} event={event} />
-            ))}
+            {pastEvents.length > 0 ? (
+              pastEvents.map((event) => (
+                <EventRow key={event.slug} event={event} />
+              ))
+            ) : (
+              <p className="py-10 text-[14px] text-[#6B7280]">
+                Past events will appear here as the archive grows.
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -297,10 +342,10 @@ export function EventsView() {
           className="mx-auto max-w-[720px] px-5 text-center sm:px-8"
           data-reveal
         >
-          <h2 className="text-[32px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[40px]">
+          <h2 className="text-[24px] leading-[1.08] font-bold tracking-[-0.035em] text-[#1F2937] sm:text-[36px] lg:text-[40px]">
             Host a circle with us
           </h2>
-          <p className="mx-auto mt-5 max-w-md text-[16px] leading-relaxed text-[#6B7280]">
+          <p className="mx-auto mt-5 max-w-md text-[14px] leading-relaxed text-[#6B7280]">
             Campuses, community hubs, and partners can invite Talk It Initiative
             to facilitate a dialogue session or panel.
           </p>
@@ -308,7 +353,7 @@ export function EventsView() {
             <Button
               nativeButton={false}
               render={<Link href="/partners#enquire" />}
-              className="h-12 rounded-full bg-brand px-7 text-[15px] font-semibold text-white hover:bg-brand/90"
+              className="h-12 rounded-full bg-brand px-7 text-[13px] font-semibold text-white hover:bg-brand/90"
             >
               Partner to host
             </Button>
@@ -316,7 +361,7 @@ export function EventsView() {
               nativeButton={false}
               render={<Link href="/get-involved" />}
               variant="outline"
-              className="h-12 rounded-full border-black/10 bg-white px-7 text-[15px] font-medium text-[#1F2937] hover:bg-white hover:text-[#1F2937]"
+              className="h-12 rounded-full border-black/10 bg-white px-7 text-[13px] font-medium text-[#1F2937] hover:bg-white hover:text-[#1F2937]"
             >
               Get Involved
             </Button>

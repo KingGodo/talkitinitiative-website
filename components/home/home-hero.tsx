@@ -113,8 +113,8 @@ export function HomeHero() {
               priority
             />
             <CaptionCard>
-              Be part of a growing community building safer spaces for young
-              voices.
+              Be part of a growing community advancing youth empowerment and
+              civic participation.
             </CaptionCard>
           </div>
 
@@ -128,7 +128,7 @@ export function HomeHero() {
               priority
             />
             <CaptionCard>
-              Together, we turn honest conversation into lasting change.
+              Together, we turn dialogue into leadership and community action.
             </CaptionCard>
           </div>
 
@@ -156,7 +156,7 @@ export function HomeHero() {
             <PhotoCard
               src={heroMidRight}
               className="h-[260px] w-full xl:h-[280px]"
-              overlay="Together, we turn honest conversation into lasting change."
+              overlay="Together, we turn dialogue into leadership and community action."
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ export function HomeHero() {
                 {siteImages.homeAvatars.map((src) => (
                   <div
                     key={src}
-                    className="relative size-6 overflow-hidden rounded-full border-2 border-white sm:size-8"
+                    className="relative size-6 overflow-hidden rounded-full border-2 border-white sm:size-7"
                   >
                     <Image
                       src={src}
@@ -179,47 +179,47 @@ export function HomeHero() {
                       fill
                       unoptimized
                       className="object-cover object-center"
-                      sizes="32px"
+                      sizes="28px"
                     />
                   </div>
                 ))}
               </div>
-              <p className="text-left text-[11px] leading-snug text-[#6B7280] sm:text-[13px]">
-                Youth voices rising. Safe conversations. Join the movement
-                today.
+              <p className="text-left text-[11px] leading-snug text-[#6B7280] sm:text-[12px]">
+                Youth empowerment · Civic participation · Community
+                transformation
               </p>
             </div>
 
-            <h1 className="mt-6 text-[26px] leading-[1.12] font-bold tracking-[-0.04em] text-[#1F2937] sm:mt-8 sm:text-[42px] lg:text-[52px] xl:text-[58px]">
-              <span className="block sm:whitespace-nowrap">
-                One voice. One space.
+            <h1 className="mt-5 text-[24px] leading-[1.12] font-bold tracking-[-0.04em] text-[#1F2937] sm:mt-6 sm:text-[36px] lg:text-[40px]">
+              <span className="block">
+                Your voice. Our future. Speak,
               </span>
-              <span className="block sm:whitespace-nowrap">
-                One stronger future.
+              <span className="block">
+                participate, lead and create change.
               </span>
             </h1>
 
-            <p className="mt-4 max-w-[30rem] text-[14px] leading-relaxed text-[#6B7280] sm:mt-6 sm:text-[17px]">
-              We create safe spaces for young people in Zambia to speak honestly,
-              about mental health, leadership, and the change they are ready
-              to lead.
+            <p className="mt-4 max-w-[30rem] text-[14px] leading-relaxed text-[#6B7280] sm:mt-6 sm:text-[14px]">
+              A non-profit-making, non-partisan and youth-led organisation
+              advancing youth empowerment, civic participation and community
+              transformation in Zambia.
             </p>
 
             <div className="mt-6 flex w-full max-w-sm flex-col gap-2.5 sm:mt-8 sm:w-auto sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-3">
               <Button
                 nativeButton={false}
-                render={<Link href="/get-involved" />}
-                className="h-11 w-full rounded-full bg-brand text-[14px] font-semibold text-white hover:bg-brand/90 sm:h-12 sm:w-auto sm:px-7 sm:text-[15px]"
+                render={<Link href="/programs" />}
+                className="h-11 w-full rounded-full bg-brand text-[13px] font-semibold text-white hover:bg-brand/90 sm:h-12 sm:w-auto sm:px-7"
               >
-                Get Involved
+                Explore Our Work
               </Button>
               <Button
                 nativeButton={false}
-                render={<Link href="/about" />}
+                render={<Link href="/membership" />}
                 variant="outline"
-                className="h-11 w-full rounded-full border-[#E5E5E5] bg-white text-[14px] font-medium text-[#1F2937] hover:bg-[#f7f7f7] sm:h-12 sm:w-auto sm:px-6 sm:text-[15px]"
+                className="h-11 w-full rounded-full border-[#E5E5E5] bg-white text-[13px] font-medium text-[#1F2937] hover:bg-[#f7f7f7] sm:h-12 sm:w-auto sm:px-6"
               >
-                Our Story
+                Become a Member
                 <ArrowRight className="size-4" />
               </Button>
             </div>
@@ -240,8 +240,8 @@ export function HomeHero() {
                 priority
               />
               <CaptionCard>
-                Be part of a growing community building safer spaces for young
-                voices.
+                Be part of a growing community advancing youth empowerment and
+                civic participation.
               </CaptionCard>
             </div>
 
@@ -269,7 +269,7 @@ export function HomeHero() {
               <PhotoCard
                 src={heroMidRight}
                 className="h-[210px] w-full sm:h-[240px]"
-                overlay="Together, we turn honest conversation into lasting change."
+                overlay="Together, we turn dialogue into leadership and community action."
               />
             </div>
 
@@ -279,7 +279,7 @@ export function HomeHero() {
             >
               <PhotoCard src={heroRight} className="aspect-[3/4] w-full" />
               <CaptionCard>
-                Together, we turn honest conversation into lasting change.
+                Together, we turn dialogue into leadership and community action.
               </CaptionCard>
             </div>
           </div>
