@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useRef } from "react";
 
 import { Button } from "@/components/ui/button";
+import { LinkedInIcon } from "@/components/layout/social-icons";
 import {
   boardMembers,
   leadersByLevel,
@@ -269,21 +270,28 @@ function BoardMemberCard({
               {person.role}
             </p>
           ) : null}
+          {person.linkedIn ? (
+            <a
+              href={person.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${person.name} on LinkedIn`}
+              title="LinkedIn"
+              className="mt-2 inline-flex size-8 items-center justify-center rounded-full border border-black/[0.08] text-[#4B5563] transition-colors hover:border-brand/30 hover:bg-brand/[0.04] hover:text-brand"
+            >
+              <LinkedInIcon className="size-3.5" />
+            </a>
+          ) : null}
         </div>
       </div>
       {isTba ? (
         <p className="mt-4 text-[14px] leading-relaxed text-[#6B7280]">
-          Name and biography to be confirmed.
+          Name to be confirmed.
         </p>
       ) : (
-        <>
-          <p className="mt-4 text-[14px] leading-relaxed text-[#6B7280]">
-            {person.responsibilities}
-          </p>
-          <p className="mt-3 text-[14px] leading-relaxed text-[#6B7280]">
-            {person.bio}
-          </p>
-        </>
+        <p className="mt-4 text-[14px] leading-relaxed text-[#6B7280]">
+          {person.responsibilities}
+        </p>
       )}
     </li>
   );

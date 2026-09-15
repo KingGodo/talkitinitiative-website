@@ -38,6 +38,8 @@ export const boardMembers: Leader[] = [
     boardOrder: 1,
     chartLevel: 1,
     status: "confirmed",
+    linkedIn:
+      "https://www.linkedin.com/in/sylvester-simutowe-bacc-4937102a5",
   },
   {
     name: "Mannase Chewe",
@@ -74,6 +76,7 @@ export const boardMembers: Leader[] = [
     boardOrder: 4,
     chartLevel: 3,
     status: "confirmed",
+    linkedIn: "https://www.linkedin.com/in/leeroy-mpofu-27478920b",
   },
   {
     name: "King T. Godo",
@@ -86,6 +89,7 @@ export const boardMembers: Leader[] = [
     boardOrder: 5,
     chartLevel: 3,
     status: "confirmed",
+    linkedIn: "https://www.linkedin.com/in/king-tichaona-godo-6610972b6",
   },
 ];
 

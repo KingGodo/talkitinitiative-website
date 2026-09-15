@@ -99,5 +99,21 @@ export const donateUses = [
   "Research, advocacy and provincial outreach",
 ] as const;
 
-/** Publish only after Board-approved profile URLs are confirmed. */
-export const socialLinks: { label: string; href: string }[] = [];
+export const socialLinks: { label: string; href: string }[] = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1EyQsQjexf/",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/talk-it-initiative/",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@talk.it.initiative",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@Talk.It.Initiative",
+  },
+];

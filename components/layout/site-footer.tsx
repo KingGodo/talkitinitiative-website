@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SiteLogo } from "@/components/layout/site-logo";
+import { socialBrandIcons } from "@/components/layout/social-icons";
 import { footerNav, site, socialLinks } from "@/lib/navigation";
 
 export function SiteFooter() {
@@ -32,17 +33,33 @@ export function SiteFooter() {
               {site.phone}
             </a>
             {socialLinks.length > 0 ? (
-              <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
-                {socialLinks.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-[13px] font-medium text-[#6B7280] transition-colors hover:text-brand"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
+              <ul className="mt-6 flex flex-wrap items-center gap-2.5">
+                {socialLinks.map((item) => {
+                  const Icon =
+                    socialBrandIcons[
+                      item.label as keyof typeof socialBrandIcons
+                    ];
+                  return (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={item.label}
+                        title={item.label}
+                        className="inline-flex size-9 items-center justify-center rounded-full border border-black/[0.08] text-[#4B5563] transition-colors hover:border-brand/30 hover:bg-brand/[0.04] hover:text-brand"
+                      >
+                        {Icon ? (
+                          <Icon className="size-4" />
+                        ) : (
+                          <span className="text-[11px] font-semibold">
+                            {item.label.slice(0, 1)}
+                          </span>
+                        )}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             ) : null}
           </div>
